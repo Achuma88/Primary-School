@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Primary School</title>
+
+  <style>
+    :root {
+      --navy: #0b1c2d;
+      --green: #1b5e20;
+      --light: #f4f6f8;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: #333;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: var(--navy);
+      color: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      flex-wrap: wrap;
+    }
+
+    nav h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+      gap: 15px;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(90deg, var(--navy), var(--green));
+      color: var(--white);
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+
+    section {
+      background: var(--white);
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    section h2 {
+      color: var(--navy);
+      border-left: 6px solid var(--green);
+      padding-left: 10px;
+    }
+
+    /* ===== GRADES ===== */
+    #classes {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    #classes > li {
+      background: #e8f5e9;
+      border-left: 6px solid var(--green);
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+
+    .grade-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--navy);
+    }
+
+    .phase {
+      font-size: 13px;
+      color: var(--green);
+      margin-top: 4px;
+    }
+
+    /* Teachers list */
+    .teachers {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .teachers li {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    /* SPORTS */
+    .sports {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .sport-card {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      border-top: 4px solid var(--navy);
+    }
+
+    /* CONTACT */
+    form {
+      display: grid;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      background: var(--green);
+      color: var(--white);
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    button:hover {
+      background: #145214;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      nav ul {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+      }
+    }
+    #classes h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding-left: 8px;
+  border-left: 4px solid var(--green);
+}
+.sport-card {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sport-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+.events-section {
+  margin-top: 40px;
+}
+
+.event-controls {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.event-controls button {
+  background: #0b3d91; /* Navy */
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.event-controls button:hover {
+  background: #1b5e20; /* Dark green */
+}
+
+.event-card {
+  background: #f1f8ff;
+  border-left: 6px solid #0b3d91;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+
+.event-date {
+  font-weight: bold;
+  color: #1b5e20;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Calendar */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.calendar-day {
+  border: 1px solid #ddd;
+  padding: 10px;
+  min-height: 80px;
+  border-radius: 6px;
+  background: white;
+}
+
+.calendar-day.event {
+  background: #e8f5e9;
+  border-color: #1b5e20;
+}
+.hidden {
+  display: none;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <h1>🌿Laerskool Voorpos</h1>
+    <ul>
+      <li><a href="#history">History</a></li>
+      <li><a href="#grades">Grades</a></li>
+      <li><a href="#sports">Sports</a></li>
+      <li><a href="#contact">Contact</a></li>
+       <li><a href="#docsAndDowns">Documents and Downloads</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h2>Excellence in Education</h2>
+    <p>Growing young minds through learning, sports and community</p>
+  </header>
+
+  <main>
+
+    <section id="history">
+      <h2>Our History</h2>
+      <p>
+        Voorpos Primary was founded in 1998, our school has proudly served the community by
+        providing quality education, discipline, and holistic development.
+      </p>
+    </section>
+
+    <section id="grades">
+      <h2>Grades Offered</h2>
+      <!-- JS injects grades here -->
+      <ul id="classes"></ul>
+    </section>
+
+    <div class="sports">
+      <a href="sports/soccer.html" class="sport-card">⚽ Soccer</a>
+      <a href="sports/rugby.html" class="sport-card">🏉 Rugby</a>
+      <a href="sports/athletics.html" class="sport-card">🏃 Athletics</a>
+      <a href="sports/chess.html" class="sport-card">♟️ Chess</a>
+   </div>
+   <section id="support">
+      <h2>📘 Academic & Learner Support</h2>
+
+       <div class="sports">
+         <div class="sport-card">
+              📖 <strong>Extra Classes</strong>
+              <p>
+                 Afternoon support lessons for Mathematics, English and Home Language
+                 to assist learners who need additional academic support.
+             </p>
+    </div>
+
+    <div class="sport-card">
+      🧠 <strong>Remedial Support</strong>
+      <p>
+        Individual and small-group intervention for learners experiencing
+        learning barriers.
+      </p>
+    </div>
+
+    <div class="sport-card">
+      ✍️ <strong>Homework Centre</strong>
+      <p>
+        Supervised homework sessions after school to help learners stay on track
+        with their schoolwork.
+      </p>
+    </div>
+
+    <div class="sport-card">
+      💬 <strong>Counselling & Learner Support</strong>
+      <p>
+        Emotional and social support services aimed at learner wellbeing and
+        confidence building.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+  <section class="events-section">
+     <h2>📅 School Events – 2026</h2>
+
+      <div class="event-controls">
+         <button type="button" onclick="showList()">List View</button>
+         <button type="button" onclick="showCalendar()">Calendar View</button>
+      </div>
+
+     <div id="eventList"></div>
+     <div id="calendar" class="hidden"></div>
+  </section>
+
+
+
+
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Primary School | Built by Achuma Tilimeni
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
