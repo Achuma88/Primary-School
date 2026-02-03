@@ -1,74 +1,73 @@
+document.addEventListener("DOMContentLoaded", () => {
+  loadGrades();
+  showList();
+});
+
 /* ===============================
    GRADES & PHASES
 ================================ */
 
-fetch("http://localhost:5000/api/classes")
-  .then(response => {
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    return response.json();
-  })
-  .then(classes => {
-    const list = document.getElementById("classes");
-    list.innerHTML = "";
-
-    // Group grades by phase
-    const phases = {};
-
-    classes.forEach(grade => {
-      if (!phases[grade.phase]) {
-        phases[grade.phase] = [];
+function loadGrades() {
+  fetch("http://localhost:5000/api/classes")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
       }
-      phases[grade.phase].push(grade);
+      return response.json();
+    })
+    .then(classes => renderGrades(classes))
+    .catch(error => {
+      console.error("Error fetching classes:", error);
     });
+}
 
-    // Render phases
-    Object.keys(phases).forEach(phaseName => {
+function renderGrades(classes) {
+  const list = document.getElementById("classes");
+  list.innerHTML = "";
 
-      // Phase container
-      const phaseContainer = document.createElement("li");
-      phaseContainer.style.listStyle = "none";
-      phaseContainer.style.marginBottom = "20px";
+  const phases = {};
 
-      // Phase heading
-      const phaseHeading = document.createElement("h3");
-      phaseHeading.textContent = phaseName;
-      phaseHeading.style.color = "#0b1c2d";
-      phaseHeading.style.marginBottom = "10px";
-
-      phaseContainer.appendChild(phaseHeading);
-
-      // Grades under phase
-      phases[phaseName].forEach(grade => {
-        const gradeBox = document.createElement("div");
-        gradeBox.style.marginBottom = "12px";
-
-        const gradeTitle = document.createElement("div");
-        gradeTitle.className = "grade-title";
-        gradeTitle.textContent = grade.name;
-
-        const teachersList = document.createElement("ul");
-        teachersList.className = "teachers";
-
-        grade.teachers.forEach(teacher => {
-          const teacherItem = document.createElement("li");
-          teacherItem.textContent = teacher;
-          teachersList.appendChild(teacherItem);
-        });
-
-        gradeBox.appendChild(gradeTitle);
-        gradeBox.appendChild(teachersList);
-        phaseContainer.appendChild(gradeBox);
-      });
-
-      list.appendChild(phaseContainer);
-    });
-  })
-  .catch(error => {
-    console.error("Error fetching classes:", error);
+  // Group by phase
+  classes.forEach(grade => {
+    if (!phases[grade.phase]) {
+      phases[grade.phase] = [];
+    }
+    phases[grade.phase].push(grade);
   });
-  const events = [
+
+  Object.keys(phases).forEach(phaseName => {
+    const phaseItem = document.createElement("li");
+    phaseItem.className = "phase-block";
+
+    const heading = document.createElement("h3");
+    heading.className = "phase-title";
+    heading.textContent = phaseName;
+
+    phaseItem.appendChild(heading);
+
+    phases[phaseName].forEach(grade => {
+      const gradeCard = document.createElement("div");
+      gradeCard.className = "grade-card";
+
+      gradeCard.innerHTML = `
+        <h4 class="grade-title">${grade.name}</h4>
+        <ul class="teachers">
+          ${grade.teachers.map(t => `<li>${t}</li>`).join("")}
+        </ul>
+      `;
+
+      phaseItem.appendChild(gradeCard);
+    });
+
+    list.appendChild(phaseItem);
+  });
+}
+
+/* ===============================
+   EVENTS
+================================ */
+
+const events = [
   {
     date: "2026-01-15",
     title: "School Reopens",
@@ -85,11 +84,6 @@ fetch("http://localhost:5000/api/classes")
     description: "Cultural and sports activities"
   }
 ];
-
-
-/* ===============================
-   EVENTS
-================================ */
 
 const eventList = document.getElementById("eventList");
 const calendar = document.getElementById("calendar");
@@ -110,16 +104,16 @@ function renderList() {
   eventList.innerHTML = "";
 
   events.forEach(event => {
-    const div = document.createElement("div");
-    div.className = "event-card";
+    const card = document.createElement("div");
+    card.className = "event-card";
 
-    div.innerHTML = `
+    card.innerHTML = `
       <div class="event-date">${event.date}</div>
-      <div><strong>${event.title}</strong></div>
-      <div>${event.description}</div>
+      <strong>${event.title}</strong>
+      <p>${event.description}</p>
     `;
 
-    eventList.appendChild(div);
+    eventList.appendChild(card);
   });
 }
 
@@ -142,6 +136,3 @@ function renderCalendar() {
     grid.appendChild(cell);
   }
 }
-
-// Default view
-showList();

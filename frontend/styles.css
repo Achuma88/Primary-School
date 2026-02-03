@@ -1,0 +1,330 @@
+   :root {
+      --navy: #0b1c2d;
+      --green: #1b5e20;
+      --light: #f4f6f8;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+   body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Blurry background image */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("images/schlbg.jpg"); /* adjust path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(3px);            /* adjust blur strength */
+  transform: scale(1.05);       /* prevents blur edges */
+  z-index: -1;
+}
+
+/* Optional: light overlay for readability */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: -1;
+}
+
+
+    /* NAVBAR */
+    nav {
+      background: var(--navy);
+      color: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      flex-wrap: wrap;
+    }
+
+    nav h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+      gap: 15px;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(90deg, var(--navy), var(--green));
+      color: var(--white);
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+
+    section {
+      background: var(--white);
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    section h2 {
+      color: var(--navy);
+      border-left: 6px solid var(--green);
+      padding-left: 10px;
+    }
+
+    /* ===== GRADES ===== */
+    #classes {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    #classes > li {
+      background: #e8f5e9;
+      border-left: 6px solid var(--green);
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+
+    .grade-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--navy);
+    }
+
+    .phase {
+      font-size: 13px;
+      color: var(--green);
+      margin-top: 4px;
+    }
+
+    /* Teachers list */
+    .teachers {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .teachers li {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    /* SPORTS */
+    .sports {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .sport-card {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      border-top: 4px solid var(--navy);
+    }
+
+    /* CONTACT */
+    form {
+      display: grid;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    button {
+      background: var(--green);
+      color: var(--white);
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    button:hover {
+      background: #145214;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      nav ul {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+      }
+    }
+    #classes h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding-left: 8px;
+  border-left: 4px solid var(--green);
+}
+.sport-card {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sport-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+.events-section {
+  margin-top: 40px;
+}
+
+.event-controls {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.event-controls button {
+  background: #0b3d91; /* Navy */
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.event-controls button:hover {
+  background: #1b5e20; /* Dark green */
+}
+
+.event-card {
+  background: #f1f8ff;
+  border-left: 6px solid #0b3d91;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+
+.event-date {
+  font-weight: bold;
+  color: #1b5e20;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Calendar */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.calendar-day {
+  border: 1px solid #ddd;
+  padding: 10px;
+  min-height: 80px;
+  border-radius: 6px;
+  background: white;
+}
+
+.calendar-day.event {
+  background: #e8f5e9;
+  border-color: #1b5e20;
+}
+.hidden {
+  display: none;
+}
+/* =========================
+   GRADES – JS RENDERED
+========================= */
+
+/* Phase container (Foundation / Intermediate / Senior) */
+.phase-block {
+  margin-bottom: 25px;
+  background: #e8f5e9;
+  border-left: 6px solid var(--green);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Phase heading */
+.phase-title {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--navy);
+}
+
+/* Individual grade card */
+.grade-card {
+  background: var(--white);
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+/* Grade name */
+.grade-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+/* Teachers list */
+.grade-card .teachers {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.grade-card .teachers li {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
