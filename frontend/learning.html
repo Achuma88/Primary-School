@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Academics | VP Primary School</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-container">
+  <img src="images/logo.png" alt="VP Primary Logo" class="school-logo">
+  <span class="logo-text">VP Primary</span>
+</div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="#history">OUR STORY</a></li>
+      <li><a href="learning.html">LEARNING</a></li>
+      <li><a href="#sports">SPORT</a></li>
+      <li><a href="#sports"></a>VOORIE LIFE</li>
+      <li><a href="#sports"></a>EVENTS</li>
+      <li><a href="#contact">GET IN TOUCH</a></li>
+    </ul>
+
+    <a href="#contact" class="login-btn">APPLICATION FORMS</a>
+  </nav>
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>Academics & Learning</h1>
+    <p>
+      Empowering every learner through structured curriculum,
+      innovation, and academic excellence.
+    </p>
+  </div>
+</section>
+
+<!-- CURRICULUM OVERVIEW -->
+<section class="academics-overview">
+  <div class="section-header">
+    <h2>Our Curriculum</h2>
+    <p>
+      We follow the CAPS curriculum and deliver a balanced program
+      that develops knowledge, skills, and character.
+    </p>
+  </div>
+
+  <div class="overview-grid">
+    <div class="overview-card">
+  <h3>📘 Foundation Phase</h3>
+  <p class="preview">
+    Grade R – 3 focusing on literacy, numeracy, and life skills.
+  </p>
+
+  <div class="more-text">
+    <p>
+      Our Foundation Phase builds strong reading, writing, and mathematics
+      skills while developing creativity, confidence, and social awareness.
+      Learners are guided through structured play-based and formal learning
+      methods aligned with the CAPS curriculum.
+    </p>
+  </div>
+
+ 
+</div>
+
+
+<div class="overview-card">
+  <h3>📗 Intermediate Phase</h3>
+  <p class="preview">
+    Grade 4 – 7 building academic depth and independent thinking.
+  </p>
+
+  <div class="more-text">
+    <p>
+      Learners transition into more structured subject-based learning.
+      Emphasis is placed on critical thinking, research skills, problem-solving,
+      and preparation for secondary school academic expectations.
+    </p>
+  </div>
+
+  
+</div>
+
+
+<div class="overview-card">
+  <h3>💻 Technology Integration</h3>
+  <p class="preview">
+    Interactive learning tools and digital exposure in classrooms.
+  </p>
+
+  <div class="more-text">
+    <p>
+      Our classrooms integrate technology through smart tools, digital
+      research, and guided online learning platforms to ensure learners
+      are prepared for a modern, technology-driven world.
+    </p>
+  </div>
+
+ 
+</div>
+  </div>
+</section>
+
+<!-- SUBJECTS OFFERED -->
+<section class="subjects">
+  <div class="section-header">
+    <h2>Subjects Offered</h2>
+  </div>
+
+  <div class="subjects-grid">
+    <div class="subject-card">English</div>
+    <div class="subject-card">IsiXhosa</div>
+    <div class="subject-card">Afrikaans</div>
+    <div class="subject-card">Mathematics</div>
+    <div class="subject-card">Natural Sciences</div>
+    <div class="subject-card">Social Sciences</div>
+    <div class="subject-card">Life Skills</div>
+    <div class="subject-card">Technology</div>
+    <div class="subject-card">Computer Technology</div>
+    <div class="subject-card">Arts & Culture</div>
+    <div class="subject-card">Physical Education</div>
+  </div>
+</section>
+
+<!-- TEACHING APPROACH -->
+<section class="teaching-approach">
+  <div class="approach-container">
+    <div class="approach-text">
+      <h2>Our Teaching Approach</h2>
+      <p>
+        Our educators use learner-centered teaching methods that
+        encourage participation, collaboration, and critical thinking.
+      </p>
+      <p>
+        Through continuous assessment, academic support programs,
+        and structured guidance, we ensure every learner receives
+        the attention they need to succeed.
+      </p>
+    </div>
+
+    <div class="approach-image">
+      <img src="images/clssrm.jpg" alt="Classroom">
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="academic-cta">
+  <h2>Ready to Join Our Learning Community?</h2>
+  <a href="contact.html" class="btn-primary">Apply Now</a>
+</section>
+
+  <script>
+  window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+  });
+  document.querySelectorAll(".image-slider").forEach(slider => {
+  const slides = slider.querySelectorAll(".slide");
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 5000); // Change every 3 seconds
+});
+</script>
+</body>
+</html>

@@ -3,122 +3,285 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Primary School</title>
+  <title>VP Primary School</title>
   <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
 
-  <nav>
-    <h1>🌿VP Primary School</h1>
-    <ul>
-      <li><a href="#history">History</a></li>
-      <li><a href="#grades">Grades</a></li>
-      <li><a href="#sports">Sports</a></li>
-      <li><a href="#contact">Contact</a></li>
-       <li><a href="#docsAndDowns">Documents and Downloads</a></li>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo-container">
+  <img src="images/logo.png" alt="VP Primary Logo" class="school-logo">
+  <span class="logo-text">VP Primary</span>
+</div>
+
+    <ul class="nav-links">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#history">OUR STORY</a></li>
+      <li><a href="learning.html">LEARNING</a></li>
+      <li><a href="#sports">SPORT</a></li>
+      <li><a href="#voorie">VOORIE LIFE</a></li>
+      <li><a href="#spo">EVENTS</a></li>
+      <li><a href="#contact">GET IN TOUCH</a></li>
     </ul>
+
+    <a href="#contact" class="login-btn">APPLICATION FORMS</a>
   </nav>
 
-  <header>
-    <h2>Excellence in Education</h2>
-    <p>Growing young minds through learning, sports and community</p>
-  </header>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      
+      <div class="hero-text">
+  <h5>Inspiring Young Minds Every Day</h5>
+
+  <h1>
+    Building Bright Futures Through
+    Quality Education & Strong Values
+  </h1>
+
+  <p>
+    At VP Primary, we are committed to nurturing confident, curious,
+    and capable learners. Through dedicated teachers, structured
+    academic programs, vibrant sports participation, and a caring
+    school environment, we empower every child to discover their
+    potential and grow into responsible future leaders.
+  </p>
+
+  <p>
+    Our focus on excellence, discipline, creativity, and community
+    ensures that each learner receives a balanced education that
+    supports both academic success and personal development.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="#grades" class="btn-primary">Explore Our Programs</a>
+    <a href="#contact" class="btn-secondary">Enroll Today</a>
+  </div>
+</div>
+
+      
+
+    </div>
+  </section>
 
   <main>
 
-    <section id="history">
-      <h2>Our History</h2>
-      <p>
-        VP Primary was founded in 1998, our school has proudly served the community by
-        providing quality education, discipline, and holistic development.
-      </p>
-    </section>
+   <!-- WHY CHOOSE US -->
+<section class="features">
 
-    <section id="grades">
-      <h2>Grades Offered</h2>
-      <!-- JS injects grades here -->
-      <ul id="classes"></ul>
-    </section>
+  <div class="section-header">
+    <h2>Our Mission</h2>
+    <p>
+      Our mission at VP Primary School is to create a safe, inclusive, and inspiring learning environment where every learner is empowered to reach their full potential. We are committed to delivering high-quality education through dedicated teaching, innovative learning strategies, and strong community partnerships. By fostering discipline, integrity, leadership, and respect, we aim to develop confident individuals who are prepared to contribute positively to society and succeed in an ever-changing world.
+    </p>
+  </div>
 
-    <div class="sports">
-      <a href="sports/soccer.html" class="sport-card">⚽ Soccer</a>
-      <a href="sports/rugby.html" class="sport-card">🏉 Rugby</a>
-      <a href="sports/athletics.html" class="sport-card">🏃 Athletics</a>
-      <a href="sports/chess.html" class="sport-card">♟️ Chess</a>
-   </div>
-   <section id="support">
-      <h2>📘 Academic & Learner Support</h2>
+  <!-- NEW WRAPPER FOR CARDS -->
+ <div class="features-grid">
 
-       <div class="sports">
-         <div class="sport-card">
-              📖 <strong>Extra Classes</strong>
-              <p>
-                 Afternoon support lessons for Mathematics, English and Home Language
-                 to assist learners who need additional academic support.
-             </p>
+  <!-- CARD 1 -->
+  <div class="feature-card">
+    <div class="image-slider">
+      <img src="images/tch.jpg" alt="">
+      <img src="images/tch1.webp" alt="">
+      <img src="images/tch3.jpg" alt="">
+    </div>
+    <h3>Academic Excellence</h3>
+    <p>Structured programs designed to build strong academic foundations.</p>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="feature-card">
+    <div class="image-slider">
+      <img src="images/pe.jpg" alt="">
+      <img src="images/sp.webp" alt="">
+      <img src="images/sp2.jpg" alt="">
+    </div>
+    <h3>Sports & Physical Development</h3>
+    <p>Encouraging teamwork, fitness, and competitive spirit.</p>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="feature-card">
+    <div class="image-slider">
+      <img src="images/ls.webp" alt="">
+      <img src="images/ls2.avif" alt="">
+      <img src="images/ls3.jpg" alt="">
+    </div>
+    <h3>Learner Support</h3>
+    <p>A safe and supportive environment for every learner.</p>
+  </div>
+
+</div>
+
+</section>
+<!-- OUR STORY -->
+<!-- OUR STORY -->
+<section id="our-story" class="about-section">
+  <div class="about-container">
+
+    <div class="image-slider">
+      <img src="images/OLDSCHL.jpg" class="slide active">
+      <img src="images/NEWSCHL.jpg" class="slide">
+      <img src="images/rftp.png" class="slide">
     </div>
 
-    <div class="sport-card">
-      🧠 <strong>Remedial Support</strong>
+    <div class="about-text">
+      <h2>Our Story</h2>
       <p>
-        Individual and small-group intervention for learners experiencing
-        learning barriers.
+        Founded in 1998, VP Primary School began with a simple vision:
+        to provide quality education in a safe and nurturing environment.
+      </p>
+      <p>
+        Over the years, we have grown into a respected institution known
+        for academic excellence, discipline, and strong community values.
+      </p>
+      <p>
+        Today, we continue to inspire learners to become confident,
+        responsible, and future-ready leaders.
       </p>
     </div>
 
-    <div class="sport-card">
-      ✍️ <strong>Homework Centre</strong>
+  </div>
+</section>
+<!-- LEARNING -->
+<!-- LEARNING -->
+<section id="learning" class="learning-section">
+  <div class="learning-container">
+
+    <div class="learning-text">
+      <h2>Learning at VP Primary</h2>
       <p>
-        Supervised homework sessions after school to help learners stay on track
-        with their schoolwork.
+        Our curriculum develops confident and capable learners using
+        structured academic programs and modern teaching methods.
       </p>
+      <br>
+
+      <ul class="learning-list">
+        <li>✔ Strong literacy and numeracy foundation</li>
+        <li>✔ Technology-integrated classrooms</li>
+        <li>✔ Critical thinking development</li>
+        <li>✔ Holistic learner support</li>
+      </ul>
     </div>
 
-    <div class="sport-card">
-      💬 <strong>Counselling & Learner Support</strong>
-      <p>
-        Emotional and social support services aimed at learner wellbeing and
-        confidence building.
-      </p>
+    <div class="image-slider">
+      <img src="images/lrn.jpg" class="slide active">
+      <img src="images/lrn2.jpg" class="slide">
+      <img src="images/cplb.jpg" class="slide">
+    </div>
+
+  </div>
+</section>
+<section class="sponsors">
+  <div class="section-header">
+    <h2>Our Sponsors & Partners</h2>
+    <p>
+      We proudly collaborate with organizations that support education,
+      development, and community growth.
+    </p>
+  </div>
+
+  <div class="sponsor-slider">
+    <div class="sponsor-track">
+      <!-- First Set -->
+      <img src="images/spar.jpg" alt="Sponsor 1">
+      <img src="images/sp.png" alt="Sponsor 2">
+      <img src="images/vh.jpg" alt="Sponsor 3">
+      <img src="images/ok.png" alt="Sponsor 4">
+      <img src="images/kr.png" alt="Sponsor 4">
+
+      <!-- Duplicate Set (IMPORTANT for infinite loop) -->
+      <img src="images/spar.jpg" alt="Sponsor 1">
+      <img src="images/sp.png" alt="Sponsor 2">
+      <img src="images/vh.jpg" alt="Sponsor 3">
+      <img src="images/ok.png" alt="Sponsor 4">
+      <img src="images/kr.png" alt="Sponsor 4">
+
+      <img src="images/spar.jpg" alt="Sponsor 1">
+      <img src="images/sp.png" alt="Sponsor 2">
+      <img src="images/vh.jpg" alt="Sponsor 3">
+      <img src="images/ok.png" alt="Sponsor 4">
+      <img src="images/kr.png" alt="Sponsor 4">
     </div>
   </div>
 </section>
-
-
-  <section class="events-section">
-     <h2>📅 School Events – 2026</h2>
-
-      <div class="event-controls">
-         <button type="button" onclick="showList()">List View</button>
-         <button type="button" onclick="showCalendar()">Calendar View</button>
-      </div>
-
-     <div id="eventList"></div>
-     <div id="calendar" class="hidden"></div>
-  </section>
-
-
-
-
-
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea rows="4" placeholder="Your Message"></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-
   </main>
 
-  <footer>
-    © 2026 Primary School | Built by Achuma Tilimeni
-  </footer>
+  <!-- TOP CONTACT STRIP -->
+<section class="footer-top">
+  <p>
+    For more information or to discuss partnerships, please contact
+  </p>
 
-  <script src="script.js"></script>
+  <div class="contact-person">
+    <h4>Ms. Jane Smith</h4>
+    <span>Community Relations</span>
+  </div>
+</section>
+
+<!-- MAIN FOOTER -->
+<footer class="main-footer">
+
+  <div class="footer-grid">
+
+    <!-- CONTACT -->
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <p>📞 +27 43 123 4567</p>
+      <p>✉ info@vpprimary.co.za</p>
+    </div>
+
+    <!-- SOCIAL -->
+    <div class="footer-column">
+      <h3>Social Media</h3>
+      <p>Facebook</p>
+      <p>Instagram</p>
+    </div>
+
+    <!-- POLICIES -->
+    <div class="footer-column">
+      <h3>Policies</h3>
+      <p>PAIA Policy</p>
+      <p>POPIA Policy</p>
+    </div>
+
+    <!-- ADDRESS -->
+    <div class="footer-column">
+      <h3>Address</h3>
+      <p>VP Primary School</p>
+      <p>123 Education Road</p>
+      <p>Cape Town</p>
+      <p>Western Cape</p>
+      <p>South Africa</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- COPYRIGHT BAR -->
+<div class="footer-bottom">
+  © 2026 VP Primary School | Built by Achuma Tilimeni
+</div>
+  <script>
+  window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+  });
+  document.querySelectorAll(".image-slider").forEach(slider => {
+  const slides = slider.querySelectorAll(".slide");
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 5000); // Change every 3 seconds
+});
+</script>
+
 </body>
 </html>
