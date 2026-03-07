@@ -155,6 +155,7 @@ body {
 
 .features {
   padding: 80px 8%;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 /* Grid only applies to cards */
@@ -274,7 +275,7 @@ button {
   color: var(--text-light);
   max-width: 900px;
   margin: 0 auto;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family:'Calibri'; 
   font-size: 20px;
 }
 
@@ -319,11 +320,11 @@ button {
    color: var(--text-light);
   max-width: 900px;
   margin: 0 auto;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family:'Calibri';
   font-size: 20px;
 }
 .about-text p{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Calibri';
   font-size:22px;
   color: var(--text-light);
 }
@@ -333,7 +334,7 @@ button {
   color: var(--text-light);
   max-width: 900px;
   margin: 0 auto;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Calibri';
   font-size: 20px;
 }
 
@@ -966,6 +967,8 @@ color:white;
 line-height:1.7;
 margin-bottom:15px;
 color:white;
+font-family: 'Calibri';
+font-size: 19px;
 }
 
 
