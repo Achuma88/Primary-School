@@ -55,16 +55,7 @@
 
 <!-- INTRO -->
 <section class="story-intro">
-  <div class="story-container">
-
-    <div class="story-images">
-      <div class="image-slider">
-        <img src="images/OLDSCHL.jpg" class="slide active">
-        <img src="images/NEWSCHL.jpg" class="slide">
-        <img src="images/rftp.png" class="slide">
-      </div>
-    </div>
-
+  
     <div class="story-text">
       <h2>The Beginning</h2>
 
@@ -81,6 +72,12 @@
     </div>
 
   </div>
+      <div class="image-slider">
+        <img src="images/OLDSCHL.jpg" class="slide active">
+        <img src="images/NEWSCHL.jpg" class="slide">
+        <img src="images/rftp.png" class="slide">
+      </div>
+ 
 </section>
 
 <!-- TIMELINE -->
@@ -124,9 +121,9 @@
 <!-- PRINCIPAL -->
 <section class="principal-message">
   <div class="principal-container">
-    <img src="images/vpp.webp">
 
-    <div>
+    <!-- TEXT -->
+    <div class="principal-text">
       <h2>Message From The Principal</h2>
       <p>
         We focus on nurturing confident and responsible learners.
@@ -135,6 +132,12 @@
         Together with teachers and parents, we build a strong school community.
       </p>
     </div>
+
+    <!-- IMAGE -->
+    <div class="principal-image">
+      <img src="images/vpp.webp" alt="Principal">
+    </div>
+
   </div>
 </section>
 
@@ -288,6 +291,16 @@ function toggleMenu() {
   }
 
 });
+const slides = document.querySelectorAll(".slide");
+  let index = 0;
+
+  function showNextSlide() {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }
+
+  setInterval(showNextSlide, 4000); // change every 4 seconds
 </script>
 
 </body>
