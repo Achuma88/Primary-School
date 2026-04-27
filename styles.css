@@ -57,14 +57,17 @@ body {
 }
 
 
-
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 30px;
- margin-left: 80px;
- padding-left: 120px;
- 
+  gap: 20px;              /* reduce spacing */
+  margin-left: auto;      /* pushes links to the right */
+  padding-left: 0;        /* remove unnecessary spacing */
+  flex-wrap: nowrap;      /* prevent wrapping */
+}
+
+.nav-links li {
+  white-space: nowrap;    /* keeps text on one line */
 }
 
 .nav-links a {
@@ -78,14 +81,7 @@ body {
   color: var(--accent);
 }
 
-.login-btn {
-  background: linear-gradient(90deg, #ff6b00, #ffa500);
-  padding: 10px 20px;
-  border-radius: 30px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
+
 /* ======================
    MOBILE MENU BUTTON
 ====================== */
@@ -121,7 +117,10 @@ body {
 .mobile-sidebar.active {
   left: 0;
 }
-
+.mobile-sidebar a.active {
+  background: #0a2a8a;
+  border-left: 4px solid #c8b50d;
+}
 
 
 /* Icons */
@@ -146,6 +145,43 @@ body {
 .mobile-sidebar a:hover span {
   opacity: 1;
 }
+
+.image-slider {
+  width: 100%;
+  max-width: 500px;     /* controls size across site */
+  margin: 0 auto;       /* centers it */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+/* IMAGE STYLE (AFTERCARE STYLE) */
+.image-slider img {
+  width: 100%;
+  height: auto;              /* 🔥 no cropping */
+  object-fit: contain;       /* 🔥 show full image */
+  position: absolute;  
+  border-radius: 12px;
+  display: block;
+}
+.image-slider img {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+}
+
+.image-slider img.active {
+  opacity: 1;
+  position: relative;
+}
+
+.image-slider img:nth-child(1){animation-delay:0s;}
+.image-slider img:nth-child(2){animation-delay:4s;}
+.image-slider img:nth-child(3){animation-delay:8s;}
   /* HERO FIX */
 .hero {
     padding: 20px;
@@ -686,28 +722,6 @@ button {
    IMAGE SLIDER
 ========================== */
 
-.image-slider {
-  position: relative;
-  width: 500px;
-  max-width: 100%;
-  height: 350px;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-}
-
-.image-slider img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.image-slider img.active {
-  opacity: 1;
-}
 /* ==========================
    FOOTER TOP STRIP
 ========================== */
@@ -1313,10 +1327,11 @@ margin-bottom:10px;
 
 /* INTRO */
 
-.story-intro{
-padding:80px 10%;
-background:#021a60;
+.story-intro {
+  padding: 80px 10%;
+  background: #021a60;
 }
+
 .story-hero p{
   color:white;
 }
@@ -1325,6 +1340,11 @@ display:grid;
 grid-template-columns:1fr 1fr;
 gap:50px;
 align-items:center;
+}
+@media (max-width: 768px) {
+  .story-container {
+    grid-template-columns: 1fr; /* stack on small screens */
+  }
 }
 .story-text {
   position: relative;
@@ -1358,34 +1378,7 @@ font-size: 19px;
 }
 
 
-/* IMAGE SLIDER */
 
-.image-slider {
-  position: relative;
-  width: 500px;
-  max-width: 100%;
-  height: 350px;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-}
-
-.image-slider img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.image-slider img.active {
-  opacity: 1;
-}
-
-.image-slider img:nth-child(1){animation-delay:0s;}
-.image-slider img:nth-child(2){animation-delay:4s;}
-.image-slider img:nth-child(3){animation-delay:8s;}
 
 @keyframes storySlide{
 
@@ -2683,4 +2676,152 @@ margin-bottom:10px;
 }
 .card p{
   color:#0891b2
+}
+.hero.small-hero {
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  text-align: center;        /* center the text itself */
+  min-height: 300px;         /* adjust height if needed */
+}
+
+.hero.small-hero .hero-text {
+  max-width: 800px;          /* optional: keeps text neat */
+}/* SECTION */
+.section.dark-bg {
+  background: #0b2a63;
+  padding: 80px 20px;
+  color: #fff;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* TEXT */
+.section h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.intro-text {
+  max-width: 700px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+/* LAYOUT */
+.aftercare-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* LEFT SIDE */
+.aftercare-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+.aftercare-text ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+/* CARD */
+.feat-card {
+  flex: 1;
+  min-width: 300px;
+  background: #112e6b;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.about-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1;              /* THIS makes text fill the space */
+}
+.about-text h2,
+.about-text h3 {
+  text-align: center;
+}
+.about-card {
+  flex: 1;
+  max-width: 500px;
+  background: transparent;   /* remove big blue background */
+  padding: 10px;             /* small spacing */
+  border-radius: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;     /* keeps your image/card same size */
+}
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;   /* stack items */
+    padding: 20px;
+  }
+
+  .about-text,
+  .about-card {
+    width: 100%;
+    max-width: 100%;
+  }
+  .image-slider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-slider img {
+  width: 85%;
+  height: auto;
+  border-radius: 12px;
+
+  border: 4px solid #0b2a5b;   /* 🔥 THIS creates the “frame” */
+  display: block;
+  margin: 0 auto;
+}
+}
+.combined-section {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #c8b50d, #e6d84f);
+  color: #021a60;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effect */
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #e6d84f, #c8b50d);
+}
+
+/* Click effect */
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Centering (if not already applied) */
+.center-btn {
+  display: inline-block;
+  margin-top: 25px;
 }

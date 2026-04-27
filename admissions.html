@@ -24,6 +24,7 @@
       <li><a href="sport.html">SPORT</a></li>
       <li><a href="voorieLife.html">VOORIE LIFE</a></li>
       <li><a href="admissions.html">ADMISSIONS</a></li>
+      <li><a href="aftercare.html">AFTERCARE</a></li>
       <li><a href="#contact">GET IN TOUCH</a></li>
     </ul>
 
@@ -40,6 +41,7 @@
     <a href="sport.html"><i class="fas fa-futbol"></i> SPORT</a>
     <a href="voorieLife.html"><i class="fas fa-users"></i> VOORIE LIFE</a>
     <a href="admissions.html"><i class="fas fa-file-alt"></i> ADMISSIONS</a>
+    <a href="aftercare.html"><i class="fas fa-child"></i> AFTERCARE</a>
     <a href="#contact"><i class="fas fa-envelope"></i> GET IN TOUCH</a>
  </div>
 
@@ -271,12 +273,57 @@ topBtn.style.display = window.scrollY > 200 ? "block" : "none";
  };
 const menuToggle = document.querySelector(".menu-toggle");
 const sidebar = document.getElementById("sidebar");
+const navLinks = document.querySelectorAll("#sidebar a");
 
 if (menuToggle && sidebar) {
-  menuToggle.addEventListener("click", () => {
+
+  // Toggle menu
+  menuToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
     sidebar.classList.toggle("active");
   });
+
+  // Close when clicking a link
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      sidebar.classList.remove("active");
+    });
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+      sidebar.classList.remove("active");
+    }
+  });
 }
+
+/* =========================
+   ACTIVE LINK ON SCROLL
+========================= */
+const sections = document.querySelectorAll("section[id]");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+
+    if (window.scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
+});
+
+
  </script>
 </body>
 

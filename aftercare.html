@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voorpos Primary School Story</title>
+  <title>Aftercare | Voorpos Primary School</title>
 
   <link rel="icon" type="image/png" href="images/logo.ico">
   <link rel="stylesheet" href="styles.css">
@@ -48,116 +48,89 @@
 </div>
 
 <!-- HERO -->
-<section class="story-hero">
-  <div class="story-overlay">
-    <h1>Our Story</h1>
-    <p>Building a legacy of excellence, learning, and community since 1998.</p>
+<section class="hero small-hero">
+  <div class="hero-text">
+    <h1>Aftercare Program</h1>
+    <p>Providing a safe, supportive environment for learners after school hours</p>
   </div>
 </section>
 
+
 <!-- INTRO -->
-<section class="story-intro">
+<!-- ABOUT AFTERCARE -->
+<section class="about-container">
 
-  <div class="story-container"> <!-- 🔥 THIS IS IMPORTANT -->
+  <!-- LEFT SIDE (TEXT) -->
+  <div class="about-text">
+    <h2>About Our Aftercare</h2>
+    
+    <p class="intro-text">
+      Our Aftercare program is designed to support working parents by providing a safe,
+      structured, and caring environment for learners after school. We focus on homework
+      supervision, recreational activities, and personal development.
 
-    <!-- LEFT: TEXT -->
-    <div class="story-text">
-      <h2>The Beginning</h2>
+      <br><br>
 
-      <p>
-        Voorpos Primary School was founded to create a safe and inspiring
-        learning environment where every learner could grow academically,
-        socially, and personally.
-      </p>
 
-      <p>
-        Established in 1998, the school started small but with a strong belief that quality education transforms lives. 
-        Over the years, it has grown into a vibrant learning community known for its commitment to academic excellence, 
-        discipline, and holistic development. Our dedicated staff work tirelessly to nurture each learner’s potential, 
-        creating an environment where curiosity is encouraged and every child feels valued. Today, the school continues 
-        to build on its proud legacy by shaping confident, responsible, and future-ready individuals.
-      </p>
-    </div>
+      Our dedicated staff create a nurturing atmosphere where every child feels valued,
+      supported, and encouraged to grow in confidence. We aim to build not only strong
+      learners, but well-rounded individuals who are prepared for future challenges.
+    </p>
 
-    <!-- RIGHT: IMAGE SLIDER -->
-    <div class="image-slider">
-      <img src="images/OLDSCHL.jpg" class="slide active">
-      <img src="images/NEWSCHL.jpg" class="slide">
-      <img src="images/rftp.png" class="slide">
-    </div>
-
+    <h3>Operating Hours</h3>
+    <ul>
+      <li>Monday – Friday: 13:00 – 17:30</li>
+      <li>Closed on public holidays and school holidays</li>
+    </ul>
   </div>
 
+  <!-- RIGHT SIDE (IMAGE CARD - stays same) -->
+  <div class="about-card">
+    <div class="image-slider">
+      <img src="images/lrn.jpg" class="slide active">
+      <img src="images/lrn2.jpg" class="slide">
+      <img src="images/cplb.jpg" class="slide">
+    </div>
+    <!-- your existing card stays unchanged -->
+  </div>
+
+</section>
+<!-- WHAT WE OFFER -->
+<section class="section blue-bg">
+  <div class="container">
+    <h2>What We Offer</h2>
+    <ul>
+      <li>Homework supervision and academic support</li>
+      <li>Healthy snacks</li>
+      <li>Outdoor and indoor activities</li>
+      <li>Safe and secure environment</li>
+      <li>Qualified and caring staff</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FEES -->
+<section class="section dark-bg">
+  <div class="container combined-section">
+
+    <h2>Fees, Enquiries & Registration</h2>
+
+    <p>
+      For detailed information about school fees, payment options, or the registration process,
+      please contact the school office. Our team will be happy to assist you with all enquiries
+      and guide you through the application process.
+    </p>
+
+    <a href="#contact" class="btn center-btn">Contact Us</a>
+
+  </div>
 </section>
 
 <!-- TIMELINE -->
-<section class="timeline-section">
-  <div class="timeline-card">
-    <h2>History Timeline</h2>
-    <p class="timeline-subtitle">
-      <strong>A brief overview of our school’s journey.</strong>
-    </p>
 
-    <div class="timeline-row">
-
-      <div class="timeline-box">
-        <span class="timeline-date">Aug 1998</span>
-        <img src="images/OLDSCHL.jpg">
-        <p>School founded.</p>
-      </div>
-
-      <div class="timeline-box">
-        <span class="timeline-date">Jun 2005</span>
-        <img src="images/NEWSCHL.jpg">
-        <p>Renovations completed.</p>
-      </div>
-
-      <div class="timeline-box">
-        <span class="timeline-date">Oct 2015</span>
-        <img src="images/comp.jpg">
-        <p>Technology introduced.</p>
-      </div>
-
-      <div class="timeline-box">
-        <span class="timeline-date">Today</span>
-        <img src="images/voorie3.jpg">
-        <p>Growing in excellence.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- PRINCIPAL -->
-<section class="principal-message">
-  <div class="principal-container">
 
-    <!-- TEXT -->
-    <div class="principal-text">
-      <h2>Message From The Principal</h2>
-      <p>
-        We focus on nurturing confident and responsible learners.
-      </p>
-      <p>
-        Together with teachers and parents, we build a strong school community.
-      </p>
-    </div>
-
-    <!-- IMAGE -->
-    <div class="principal-image">
-      <img src="images/vpp.webp" alt="Principal">
-    </div>
-
-  </div>
-</section>
-
-<!-- FUTURE -->
-<section class="future-section">
-  <h2>Looking Towards The Future</h2>
-  <p>
-    We remain committed to quality education and innovation.
-  </p>
-</section>
 
 <!-- SCROLL BUTTON -->
 <button id="topBtn">↑</button>
@@ -259,12 +232,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     MOBILE MENU (SIDEBAR)
+     MOBILE MENU (HAMBURGER)
   ========================= */
- /* =========================
-   MOBILE MENU (SIDEBAR)
-========================= */
-const menuToggle = document.querySelector(".menu-toggle");
+  const menuToggle = document.querySelector(".menu-toggle");
 const sidebar = document.getElementById("sidebar");
 const navLinks = document.querySelectorAll("#sidebar a");
 
@@ -316,6 +286,7 @@ window.addEventListener("scroll", () => {
   });
 });
 
+
   /* =========================
      IMAGE MODAL (GALLERY)
   ========================= */
@@ -324,7 +295,6 @@ window.addEventListener("scroll", () => {
   const closeBtn = document.getElementById("closeModal");
 
   if (modal && modalImg && closeBtn) {
-
     const images = document.querySelectorAll(".gallery-img");
 
     images.forEach(img => {
@@ -345,25 +315,24 @@ window.addEventListener("scroll", () => {
     });
   }
 
-});
+  /* =========================
+     IMAGE SLIDER
+  ========================= */
+  const slides = document.querySelectorAll(".image-slider img");
 
-/* =========================
-   IMAGE SLIDER
-========================= */
-const slides = document.querySelectorAll(".slide");
+  if (slides.length > 0) {
+    let index = 0;
 
-if (slides.length > 0) {
-  let index = 0;
-
-  slides[index].classList.add("active");
-
-  setInterval(() => {
-    slides[index].classList.remove("active");
-    index = (index + 1) % slides.length;
     slides[index].classList.add("active");
-  }, 4000);
-}
-</script>
 
+    setInterval(() => {
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    }, 3000); // change every 3 seconds
+  }
+
+});
+</script>
 </body>
 </html>
