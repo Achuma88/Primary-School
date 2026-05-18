@@ -367,6 +367,50 @@ body {
 .feature-card:hover {
   transform: translateY(-8px);
 }
+.feature-icon i{
+  font-size:2rem;
+  color:#4f7cff;
+}
+.feature-icon{
+  width:60px;
+  height:60px;
+  background:white;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  position:absolute;
+  left:50%;
+  top:210px;
+
+  transform:translate(-50%,-50%);
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  border:1px solid rgba(0,0,0,0.05);
+}
+.sport-feature-icon i{
+  font-size:2rem;
+  color:#4f7cff;
+}
+.sport-feature-icon{
+  width:60px;
+  height:60px;
+  background:white;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  position:absolute;
+  left:50%;
+  top:280px;
+
+  transform:translate(-50%,-50%);
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  border:1px solid rgba(0,0,0,0.05);
+}
 
 /* ======================
    SECTIONS
@@ -2148,7 +2192,22 @@ align-items:center;
 /* SEASON BUTTONS */
 
 /* SPORTS GRID */
+@media(max-width:768px){
 
+  .sport-feature-icon{
+    width:50px;
+    height:50px;
+
+    top:240px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .sport-feature-icon i{
+    font-size:1.4rem;
+  }
+
+}
 .sports-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
