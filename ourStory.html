@@ -131,9 +131,9 @@
       </div>
 
       <div class="timeline-box">
-        <span class="timeline-date">Oct 2015</span>
-        <img src="images/comp.webp">
-        <p>Technology introduced.</p>
+        <span class="timeline-date">2024</span>
+        <img src="images/founders.webp">
+        <p>Celebrating 65 years..</p>
       </div>
 
       <div class="timeline-box">
@@ -141,12 +141,148 @@
         <img src="images/voorie3.webp">
         <p>Growing in excellence.</p>
       </div>
+     
 
     </div>
   </div>
 </section>
 
+<!-- =========================
+     MILESTONE SLIDESHOW
+========================= -->
 
+<section class="milestone-section">
+
+  <div class="milestone-header">
+
+    <span class="milestone-tag">
+      OUR JOURNEY
+    </span>
+
+    <h2>
+      Celebrating Our Milestones
+    </h2>
+
+    <p>
+      A journey filled with growth, achievement,
+      and unforgettable memories at Voorpos Primary.
+    </p>
+
+  </div>
+
+  <!-- SLIDESHOW -->
+  <div class="milestone-slider">
+
+    <!-- SLIDE 1 -->
+    <div class="milestone-slide active">
+
+      <img src="images/newBuilding1.webp"
+           alt="School Celebration">
+
+      <div class="milestone-overlay">
+
+        <span>2021</span>
+
+        <h3>
+          Construction begins
+        </h3>
+
+        <p>
+          The basic structure of the new classes has taken shape.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="milestone-slide">
+
+      <img src="images/newBuilding2.webp"
+           alt="School Growth">
+
+      <div class="milestone-overlay">
+
+       
+
+        <h3>
+          Construction Progress
+        </h3>
+
+        <p>
+          New building starting to look alive.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="milestone-slide">
+
+      <img src="images/newBuilding.webp"
+           alt="School Achievement">
+
+      <div class="milestone-overlay">
+
+        
+
+        <h3>
+          Building continues
+        </h3>
+
+        <p>
+          Planning of the paving
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="milestone-slide">
+
+      <img src="images/newBuilding3.webp"
+           alt="Milestone Celebration">
+
+      <div class="milestone-overlay">
+
+        
+
+        <h3>
+          Finishing touches.
+        </h3>
+
+        <p>
+          Adding final touches to the building and paving the area.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- BUTTONS -->
+    <button class="milestone-prev">
+      &#10094;
+    </button>
+
+    <button class="milestone-next">
+      &#10095;
+    </button>
+
+  </div>
+
+  <!-- DOTS -->
+  <div class="milestone-dots">
+
+    <span class="milestone-dot active-dot"></span>
+    <span class="milestone-dot"></span>
+    <span class="milestone-dot"></span>
+    <span class="milestone-dot"></span>
+
+  </div>
+
+</section>
 <!-- PRINCIPAL -->
 <section class="principal-message">
   <div class="principal-container">
@@ -406,7 +542,101 @@ window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
 //* CLASSROOM SLIDESHOW */
+/* =========================
+   MILESTONE SLIDESHOW
+========================= */
 
+const milestoneSlides =
+document.querySelectorAll(".milestone-slide");
+
+const milestoneDots =
+document.querySelectorAll(".milestone-dot");
+
+const milestoneNext =
+document.querySelector(".milestone-next");
+
+const milestonePrev =
+document.querySelector(".milestone-prev");
+
+let milestoneIndex = 0;
+
+/* SHOW SLIDE */
+function showMilestone(index){
+
+    milestoneSlides.forEach((slide)=>{
+
+        slide.classList.remove("active");
+    });
+
+    milestoneDots.forEach((dot)=>{
+
+        dot.classList.remove("active-dot");
+    });
+
+    milestoneSlides[index]
+    .classList.add("active");
+
+    milestoneDots[index]
+    .classList.add("active-dot");
+}
+
+/* NEXT */
+function nextMilestone(){
+
+    milestoneIndex++;
+
+    if(milestoneIndex >= milestoneSlides.length){
+
+        milestoneIndex = 0;
+    }
+
+    showMilestone(milestoneIndex);
+}
+
+/* PREVIOUS */
+function prevMilestone(){
+
+    milestoneIndex--;
+
+    if(milestoneIndex < 0){
+
+        milestoneIndex =
+        milestoneSlides.length - 1;
+    }
+
+    showMilestone(milestoneIndex);
+}
+
+/* BUTTON EVENTS */
+milestoneNext.addEventListener(
+    "click",
+    nextMilestone
+);
+
+milestonePrev.addEventListener(
+    "click",
+    prevMilestone
+);
+
+/* DOT EVENTS */
+milestoneDots.forEach((dot,index)=>{
+
+    dot.addEventListener(
+        "click",
+        ()=>{
+
+            milestoneIndex = index;
+
+            showMilestone(milestoneIndex);
+        }
+    );
+});
+
+/* INITIAL */
+showMilestone(milestoneIndex);
+
+/* AUTO PLAY */
+setInterval(nextMilestone, 5000);
 </script>
 
 </body>
