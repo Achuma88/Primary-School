@@ -8,6 +8,7 @@
   <link rel="icon" type="image/png" href="images/logo.ico">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -15,13 +16,24 @@
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="logo-container">
-    <img src="images/logo.png" alt="VP Primary Logo" class="school-logo">
-    <span class="logo-text">Voorpos Primary</span>
+    <div class="logo-section">
+
+    <img src="images/logo.webp"
+         alt="VP Primary Logo"
+         class="school-logo">
+  </div>
+  <h1 class="logo-text">
+    Voorpos Primary
+  </h1>
   </div>
 
   <ul class="nav-links">
     <li><a href="index.html">HOME</a></li>
-    <li><a href="ourStory.html">OUR STORY</a></li>
+    <li><a href="ourStory.html" class="active">
+     <i class="fa-solid fa-landmark"></i>
+      Our Story
+      </a>
+    </li>
     <li><a href="learning.html">LEARNING</a></li>
     <li><a href="sport.html">SPORT</a></li>
     <li><a href="voorieLife.html">VOORIE LIFE</a></li>
@@ -45,6 +57,12 @@
   <a href="admissions.html"><i class="fas fa-file-alt"></i> ADMISSIONS</a>
   <a href="aftercare.html"><i class="fas fa-child"></i> AFTERCARE</a>
   <a href="#contact"><i class="fas fa-envelope"></i> GET IN TOUCH</a>
+   <div class="sidebar-footer">
+
+     <img src="images/logo.webp"
+        alt="School Logo"
+        class="sidebar-logo">
+   </div>  
 </div>
 
 <!-- HERO -->
@@ -81,9 +99,9 @@
 
     <!-- RIGHT: IMAGE SLIDER -->
     <div class="image-slider">
-      <img src="images/OLDSCHL.jpg" class="slide active">
-      <img src="images/NEWSCHL.jpg" class="slide">
-      <img src="images/rftp.png" class="slide">
+      <img src="images/OLDSCHL.webp" class="slide active">
+      <img src="images/NEWSCHL.webp" class="slide">
+      <img src="images/rftp.webp" class="slide">
     </div>
 
   </div>
@@ -102,31 +120,32 @@
 
       <div class="timeline-box">
         <span class="timeline-date">Aug 1998</span>
-        <img src="images/OLDSCHL.jpg">
+        <img src="images/OLDSCHL.webp">
         <p>School founded.</p>
       </div>
 
       <div class="timeline-box">
         <span class="timeline-date">Jun 2005</span>
-        <img src="images/NEWSCHL.jpg">
+        <img src="images/NEWSCHL.webp">
         <p>Renovations completed.</p>
       </div>
 
       <div class="timeline-box">
         <span class="timeline-date">Oct 2015</span>
-        <img src="images/comp.jpg">
+        <img src="images/comp.webp">
         <p>Technology introduced.</p>
       </div>
 
       <div class="timeline-box">
         <span class="timeline-date">Today</span>
-        <img src="images/voorie3.jpg">
+        <img src="images/voorie3.webp">
         <p>Growing in excellence.</p>
       </div>
 
     </div>
   </div>
 </section>
+
 
 <!-- PRINCIPAL -->
 <section class="principal-message">
@@ -385,6 +404,9 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
+
+//* CLASSROOM SLIDESHOW */
+
 </script>
 
 </body>

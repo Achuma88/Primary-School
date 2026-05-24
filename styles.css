@@ -22,7 +22,87 @@ body {
   color: var(--text-dark);
   overflow-x: hidden;
 }
+.logo-container{
+    display:flex;
+    align-items:center;
 
+    gap:18px;
+
+    margin-left:-10px;
+}
+
+/* LOGO SECTION */
+.logo-section{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+/* SCHOOL LOGO */
+.school-logo{
+    width:72px;
+    height:auto;
+
+    object-fit:contain;
+}
+
+/* MOTTO RIBBON */
+.motto-banner{
+
+    margin-top:6px;
+
+    background:#f28c28;
+
+    color:#1d2c6b;
+
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    padding:4px 14px;
+
+    border-radius:3px;
+
+    position:relative;
+
+    transform:skew(-12deg);
+
+    box-shadow:
+    0 4px 10px rgba(0,0,0,0.25);
+}
+
+/* TEXT STRAIGHT */
+.motto-banner::before{
+    content:"SERVAMUS";
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transform:skew(12deg);
+}
+
+/* HIDE ORIGINAL TEXT */
+.motto-banner{
+    color:transparent;
+}
+
+/* SCHOOL NAME */
+.logo-text{
+    color:white;
+
+    font-size:28px;
+    font-weight:600;
+
+    line-height:1.1;
+
+    margin:0;
+}
 /* ======================
    NAVBAR
 ====================== */
@@ -64,88 +144,208 @@ body {
   margin-left: auto;      /* pushes links to the right */
   padding-left: 0;        /* remove unnecessary spacing */
   flex-wrap: nowrap;      /* prevent wrapping */
+  white-space:nowrap; /* IMPORTANT */
 }
 
-.nav-links li {
-  white-space: nowrap;    /* keeps text on one line */
+nav ul li a{
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    padding:12px 14px;
+    font-size:14px;
+
+    color:white;
+    text-decoration:none;
+
+    font-weight:400;
+
+    border-radius:14px;
+
+    transition:0.3s ease;
 }
 
-.nav-links a {
-  color: white;
-  font-weight: 500;
-   text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* HOVER */
+nav ul li a:hover{
+    background:rgba(255,255,255,0.08);
+    color:#8bb8ff;
 }
 
-.nav-links a:hover {
-  color: var(--accent);
+/* ACTIVE PAGE */
+nav ul li a.active{
+    background:linear-gradient(135deg,#245dff,#3f7dff);
+
+    box-shadow:
+    0 5px 20px rgba(37,99,235,0.45);
 }
 
-
+/* ICON */
+nav ul li a i{
+    font-size:14px;
+}
+/* DESKTOP */
+.mobile-sidebar{
+    display:none;
+}
 /* ======================
    MOBILE MENU BUTTON
 ====================== */
-/* HIDE SIDEBAR BY DEFAULT (DESKTOP) */
+@media (max-width: 768px){
 
-.mobile-sidebar {
-  position: fixed;
-  top: 90px;
-  left: -100%; /* 👈 hide it off-screen */
-  width: 220px;
-  height: 100vh;
-  background: #2f6f5f;
-  display: flex;
-  flex-direction: column;
-  padding-top: 20px;
-  transition: 0.3s ease;
-  z-index: 999;
-  align-items: flex-start;
+  .mobile-sidebar {
+
+    position: fixed;
+
+    top: 90px;
+    left: -100%;
+
+    width: 240px;
+    height: 100vh;
+
+    background: #010424;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 25px;
+
+    transition: 0.3s ease;
+
+    z-index: 999;
+
+    backdrop-filter: blur(15px);
+  }
+
+  /* OPEN SIDEBAR */
+  .mobile-sidebar.active {
+    left: 0;
+  }
+  .mobile-sidebar a:hover {
+
+  background: rgba(255,255,255,0.12);
+
+  color: #8bb8ff;
+
+  transform: translateX(6px);
+
+  border-left: 4px solid #8bb8ff;
+}
+  /* SIDEBAR LINKS */
+  .mobile-sidebar a {
+
+    font-family:'Inter', sans-serif;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    width: 100%;
+
+    padding: 18px 28px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+
+    box-sizing: border-box;
+  }
+
+  /* ICONS */
+  .mobile-sidebar i {
+
+    width: 22px;
+
+    text-align: center;
+
+    font-size: 18px;
+  }
+
+  .mobile-sidebar a:hover {
+
+  background: rgba(255,255,255,0.12);
+
+  color: #8bb8ff;
+
+  transform: translateX(6px);
+
+  border-left: 4px solid #8bb8ff;
 }
 
-/* Hide text by default */
-.mobile-sidebar a {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: 100%;
-  padding: 20px 0;
-  color: white;
-  text-decoration: none;
-  position: relative;
-  gap: 10px;
-}
-.mobile-sidebar.active {
-  left: 0;
-}
-.mobile-sidebar a.active {
-  background: #0a2a8a;
-  border-left: 4px solid #c8b50d;
-}
+  /* ACTIVE PAGE */
+  .mobile-sidebar a.active {
 
+    background: linear-gradient(
+      135deg,
+      #245dff,
+      #3f7dff
+    );
 
-/* Icons */
-.mobile-sidebar i {
-  font-size: 20px;
+    box-shadow:
+      0 5px 20px rgba(37,99,235,0.35);
+
+    border-left: 4px solid #ffd500;
+  }
+
+  /* FOOTER */
+  .sidebar-footer{
+
+    margin-top:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:25px 0;
+  }
+
+  /* LOGO */
+  .sidebar-logo {
+
+    width: 75px;
+
+    opacity: 0.95;
+
+    margin-bottom: 150px;
+
+    object-fit: contain;
+  }
+
+  /* SCHOOL NAME */
+ .sidebar-footer p{
+
+  font-size: 13px;
+
+  color: #8bb8ff;
+
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+
+  text-align: center;
+
+  margin: 0;
+
+  line-height: 1.5;
+
+  font-family:'Poppins', sans-serif;
 }
+  .nav-links{
+      display:none;
+   }
 
-/* TEXT (hidden until hover) */
-.mobile-sidebar span {
-  position: absolute;
-  left: 80px;
-  background: #ffc107;
-  color: black;
-  padding: 8px 15px;
-  border-radius: 6px;
-  opacity: 0;
-  white-space: nowrap;
-  transition: 0.3s;
 }
-
-/* SHOW TEXT ON HOVER */
-.mobile-sidebar a:hover span {
-  opacity: 1;
-}
-
 .image-slider {
   width: 100%;
   max-width: 500px;     /* controls size across site */
@@ -268,19 +468,19 @@ body {
 
 @keyframes heroSlide {
   0% {
-    background-image: url("images/voorie.jpg");
+    background-image: url("images/voorie.webp");
   }
   25% {
-    background-image: url("images/voorie2.jpg");
+    background-image: url("images/voorie2.webp");
   }
   50% {
-    background-image: url("images/voorie3.jpg");
+    background-image: url("images/voorie3.webp");
   }
   75% {
-    background-image: url("images/schlbg.jpg");
+    background-image: url("images/schlbg.webp");
   }
   100% {
-    background-image: url("images/voorie.jpg");
+    background-image: url("images/voorie.webp");
   }
 }
 .hero h1 {
@@ -347,7 +547,9 @@ body {
   padding: 80px 8%;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-
+.features p{
+  color:white;
+}
 /* Grid only applies to cards */
 .features-grid {
   display: grid;
@@ -355,39 +557,179 @@ body {
   gap: 30px;
   margin-top: 50px; /* pushes cards below paragraph */
 }
+/* =========================
+   FEATURE CARD
+========================= */
 
-.feature-card {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: 0.3s;
+.feature-card{
+    position:relative;
+
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    padding:0 0 35px;
+    border-radius:28px;
+
+    overflow:hidden;
+
+    transition:0.4s ease;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.25);
+
+    max-width:360px;
+    margin:auto;
+    min-height:400px;
+}
+.feature-card p{
+    color:white;
+    padding: 0 20px 20px;
+}
+/* HOVER EFFECT */
+.feature-card:hover{
+    transform:translateY(-10px);
+    box-shadow:
+    0 20px 45px rgba(0,0,0,0.35);
 }
 
-.feature-card:hover {
-  transform: translateY(-8px);
+/* =========================
+   IMAGE
+========================= */
+
+.feature-image{
+    width:100%;
+    height:220px;
+    overflow:hidden;
+    border-radius:28px 28px 0 0;
 }
-.feature-icon i{
-  font-size:2rem;
-  color:#4f7cff;
+
+.feature-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s ease;
 }
+
+.feature-card:hover .feature-image img{
+    transform:scale(1.05);
+}
+
+/* =========================
+   FLOATING ICON
+========================= */
+
 .feature-icon{
-  width:60px;
-  height:60px;
-  background:white;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    width:57px;
+    height:57px;
 
-  position:absolute;
-  left:50%;
-  top:210px;
+    background:linear-gradient(
+        135deg,
+        #4f7cff,
+        #2c5df5
+    );
 
-  transform:translate(-50%,-50%);
+    border-radius:50%;
 
-  box-shadow:0 8px 20px rgba(0,0,0,0.1);
-  border:1px solid rgba(0,0,0,0.05);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:absolute;
+    left:50%;
+    top:220px;
+
+    transform:translate(-50%,-50%);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.25);
+
+    border:4px solid #071c63;
+
+    z-index:10;
+    
+}
+
+.feature-icon i{
+    font-size:1.7rem;
+    color:white;
+  
+
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.feature-content{
+    text-align:center;
+
+    padding-top:120px; /* THIS creates the gap */
+    padding-left:28px;
+    padding-right:28px;
+    padding-bottom:30px;
+}
+
+.feature-content h3{
+    color:#7ea7ff;
+    font-size:2rem;
+    margin:0 0 15px;
+    font-weight:700;
+}
+
+.feature-content h3::after{
+    content:"";
+
+    width:70px;
+    height:4px;
+
+    background:#f4c542;
+
+    display:block;
+
+    margin:16px auto 0;
+
+    border-radius:10px;
+}
+
+.feature-content p{
+    color:#f1f1f1;
+
+    line-height:1.9;
+
+    font-size:1.05rem;
+
+    margin-top:25px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .feature-card{
+        max-width:100%;
+    }
+
+    .feature-content h3{
+        font-size:1.6rem;
+    }
+
+    .feature-image{
+        height:200px;
+    }
+
+    .feature-icon{
+        width:70px;
+        height:70px;
+        top:200px;
+    }
+
+    .feature-icon i{
+        font-size:1.7rem;
+    }
 }
 .sport-feature-icon i{
   font-size:2rem;
@@ -638,10 +980,7 @@ button {
   padding: 20px 20px 10px;
 }
 
-.feature-card p {
-  padding: 0 20px 20px;
-  color: #555;
-}
+
 .news-section h2{
   text-align: center;
 }
@@ -851,7 +1190,7 @@ button {
 /* ICONS */
 .footer-column i {
   margin-right: 10px;
-  color: #072c34;
+  color: #047f9b;
   align-items: center;
 }
 
@@ -865,7 +1204,7 @@ button {
 .social-icons a {
   width: 40px;
   height: 40px;
-  background: #0ea5c6;
+  background: #f1f1f1;
   color: white;
   display: flex;
   align-items: center;
@@ -877,6 +1216,7 @@ button {
 .social-icons a:hover {
   background: #7aa8f1;
   transform: scale(1.1);
+  color: white;
 }
 
 /* ===== COPYRIGHT ===== */
@@ -925,10 +1265,10 @@ button {
 }
 @keyframes pageheroSlide {
   0% {
-    background-image: url("images/clss.jpg");
+    background-image: url("images/clss.webp");
   }
   25% {
-    background-image: url("images/clssrm.jpg");
+    background-image: url("images/clssrm.webp");
   }
   50% {
     background-image: url("images/happy.webp");
@@ -937,7 +1277,7 @@ button {
     background-image: url("images/vpp.webp");
   }
   100% {
-    background-image: url("images/cring.jpeg");
+    background-image: url("images/cring.webp");
   }
 }
 /* TEXT */
@@ -1648,19 +1988,19 @@ button {
 }
 @keyframes storyheroSlide {
   0% {
-    background-image: url("images/OLDSCHL.jpg");
+    background-image: url("images/OLDSCHL.webp");
   }
   25% {
-    background-image: url("images/NEWSCHL.jpg");
+    background-image: url("images/NEWSCHL.webp");
   }
   50% {
-    background-image: url("images/rftp.png");
+    background-image: url("images/rftp.webp");
   }
   75% {
-    background-image: url("images/bld1.jpg");
+    background-image: url("images/bld1.webp");
   }
   100% {
-    background-image: url("images/bld2.jpg");
+    background-image: url("images/bld2.webp");
   }
 }
 
@@ -1824,6 +2164,9 @@ font-size: 19px;
   opacity: 0.9;
   color:white;
 }
+/* ===================================
+   CLASSROOM SHOWCASE
+=================================== */
 
 /* =========================
    PRINCIPAL SECTION FIXED
@@ -1953,22 +2296,22 @@ ase Styling */
 /* SMOOTHER IMAGE SWITCH */
 @keyframes sportheroSlide {
 
-  0%   { background-image: url("images/netball.jpg"); opacity: 1; }
+  0%   { background-image: url("images/netball.webp"); opacity: 1; }
   20%  { opacity: 1; }
 
-  25%  { background-image: url("images/primcri.png"); opacity: 0; }
+  25%  { background-image: url("images/primcri.webp"); opacity: 0; }
   30%  { opacity: 1; }
 
   45%  { opacity: 1; }
-  50%  { background-image: url("images/sport5.jpg"); opacity: 0; }
+  50%  { background-image: url("images/sport5.webp"); opacity: 0; }
   55%  { opacity: 1; }
 
   70%  { opacity: 1; }
-  75%  { background-image: url("images/schlcrkt.jpg.webp"); opacity: 0; }
+  75%  { background-image: url("images/schlcrkt.webp"); opacity: 0; }
   80%  { opacity: 1; }
 
   95%  { opacity: 1; }
-  100% { background-image: url("images/sp.png"); opacity: 0; }
+  100% { background-image: url("images/sp.webp"); opacity: 0; }
 }
 /* SPORTS GALLERY */
 
@@ -2331,19 +2674,19 @@ transform:translateY(-3px);
 }
 @keyframes cultureheroSlide {
   0% {
-    background-image: url("images/sgb1.jpg");
+    background-image: url("images/sgb1.webp");
   }
   25% {
-    background-image: url("images/sgb4.jpg");
+    background-image: url("images/sgb4.webp");
   }
   50% {
-    background-image: url("images/sgb2.jpg");
+    background-image: url("images/sgb2.webp");
   }
   75% {
-    background-image: url("images/swmg.jpg");
+    background-image: url("images/swmg.webp");
   }
   100% {
-    background-image: url("images/blg3.jpg");
+    background-image: url("images/blg3.webp");
   }
 }
 
@@ -2415,33 +2758,184 @@ background:#1b2a6b;
 }
 .culture-activities h2{
 text-align:center;}
+
 .activities-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:35px;
+    margin-top:50px;
 }
 
 .activity-card{
-background:white;
-border-radius:10px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    position:relative;
+    background:#182b7a;
+    border-radius:28px;
+    overflow:hidden;
+    max-width:340px;
+    margin:auto;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    transition:0.4s ease;
+    text-align:center;
+    padding-bottom:30px;
+    border:1px solid rgba(255,255,255,0.08);
 }
-
+.activity-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.35);
+}
 .activity-card img{
 width:100%;
 height:200px;
 object-fit:cover;
 }
 
+
+/* =========================
+   FLOATING ICON
+========================= */
+
+.activity-card::before{
+    content:"";
+    position:absolute;
+    width:80px;
+    height:80px;
+    background:linear-gradient(135deg,#3b82ff,#2458e8);
+    border-radius:50%;
+    top:175px;
+    left:50%;
+    transform:translateX(-50%);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    border:5px solid #182b7a;
+    z-index:5;
+}
+/* ICONS */
+.activity-card:nth-child(1)::after{
+    content:"\f518";
+    font-family:"Font Awesome 6 Free";
+    font-weight:900;
+
+    position:absolute;
+    top:198px;
+    left:50%;
+    transform:translateX(-50%);
+
+    color:white;
+    font-size:1.8rem;
+    z-index:10;
+}
+
+.activity-card:nth-child(2)::after{
+    content:"\f001";
+    font-family:"Font Awesome 6 Free";
+    font-weight:900;
+
+    position:absolute;
+    top:198px;
+    left:50%;
+    transform:translateX(-50%);
+
+    color:white;
+    font-size:1.8rem;
+    z-index:10;
+}
+
+.activity-card:nth-child(3)::after{
+    content:"\f091";
+    font-family:"Font Awesome 6 Free";
+    font-weight:900;
+
+    position:absolute;
+    top:198px;
+    left:50%;
+    transform:translateX(-50%);
+
+    color:white;
+    font-size:1.8rem;
+    z-index:10;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
 .activity-card h3{
-padding:15px;
+    margin-top:65px;
+    font-size:2rem;
+    color:#79a6ff;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+.activity-card h3::after{
+    content:"";
+    width:65px;
+    height:4px;
+    background:#f4c542;
+    display:block;
+    margin:14px auto 0;
+    border-radius:10px;
 }
 
 .activity-card p{
-padding:0 15px 20px;
+    color:#f1f1f1;
+    font-size:1rem;
+    line-height:1.8;
+    padding:0 25px;
+    margin-bottom:30px;
 }
 
+/* =========================
+   BUTTON
+========================= */
+
+.read-more-btn{
+    background:linear-gradient(135deg,#3c82ff,#245be8);
+    color:white;
+    border:none;
+    padding:13px 28px;
+    border-radius:12px;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.read-more-btn:hover{
+    transform:translateY(-4px);
+    background:linear-gradient(135deg,#4d90ff,#2e66f0);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .activity-card{
+        max-width:100%;
+    }
+
+    .activity-card h3{
+        font-size:1.7rem;
+    }
+
+    .card-slider{
+        height:200px;
+    }
+
+    .activity-card::before{
+        width:70px;
+        height:70px;
+        top:160px;
+    }
+
+    .activity-card:nth-child(1)::after,
+    .activity-card:nth-child(2)::after,
+    .activity-card:nth-child(3)::after{
+        top:180px;
+        font-size:1.5rem;
+    }
+}
 /* QUOTE */
 .section-intro{
 max-width:700px;
@@ -2451,58 +2945,102 @@ color:white;
 text-align:center;
 line-height:1.6;
 }
-.culture-quote{
-background:#031752;
-color:white;
-text-align:center;
-padding:70px;
-font-size:22px;
-}
+
 /* SLIDER INSIDE CARD */
+/* =========================
+   ACTIVITY IMAGE SLIDER
+========================= */
 
 .card-slider{
-position:relative;
-height:200px;
-overflow:hidden;
-border-radius:10px 10px 0 0;
+    position:relative;
+    width:100%;
+    height:220px;
+    overflow:hidden;
 }
-
 .card-slider img{
-width:100%;
-height:200px;
-object-fit:cover;
-position:absolute;
-top:0;
-left:0;
-opacity:0;
-transition:opacity 1s ease;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    position:absolute;
+    inset:0;
+
+    opacity:0;
+    transition:opacity 1s ease;
 }
 
+
+/* SHOW ACTIVE IMAGE */
 .card-slider img.active{
-opacity:1;
-position:relative;
-}
-/* BUTTON */
-
-.read-more-btn {
-  display: block;           /* makes it behave like a block */
-  margin: 15px auto;        /* centers horizontally */
-
-  padding: 10px 16px;
-  border: none;
-  background: #1a73e8;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
+    opacity:1;
 }
 
+/* =========================
+   CULTURE QUOTE SECTION
+========================= */
 
+.culture-quote{
+    background:linear-gradient(
+        rgba(3,23,82,0.88),
+        rgba(3,23,82,0.88)
+    ),
+    url("images/schlbg.webp");
 
-.read-more-btn:hover{
-background:#0d47a1;
+    background-size:cover;
+    background-position:center;
+
+    padding:100px 20px;
+    text-align:center;
+    color:white;
+    position:relative;
 }
 
+.quote-overlay{
+    max-width:900px;
+    margin:auto;
+}
+
+.culture-quote h2{
+    font-size:1.3rem;
+    font-weight:700;
+    margin-bottom:25px;
+    line-height:1.3;
+    color:#ffffff;
+}
+
+.culture-quote h2::after{
+    content:"";
+    width:90px;
+    height:4px;
+    background:#f4c542;
+    display:block;
+    margin:20px auto 0;
+    border-radius:10px;
+}
+
+.culture-quote p{
+    font-size:1.1rem;
+    line-height:1.9;
+    color:#e8e8e8;
+    max-width:750px;
+    margin:30px auto 0;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    .culture-quote{
+        padding:80px 20px;
+    }
+
+    .culture-quote h2{
+        font-size:2rem;
+    }
+
+    .culture-quote p{
+        font-size:1rem;
+    }
+}
 /* MODAL */
 
 .modal{
@@ -2689,19 +3227,19 @@ cursor:pointer;
 
 @keyframes admissionSlide {
   0% {
-    background-image: url("images/voorie.jpg");
+    background-image: url("images/voorie.webp");
   }
   25% {
-    background-image: url("images/clssrm.jpg");
+    background-image: url("images/clssrm.webp");
   }
   50% {
-    background-image: url("images/sgb2.jpg");
+    background-image: url("images/sgb2.webp");
   }
   75% {
-    background-image: url("images/cring.jpeg");
+    background-image: url("images/cring.webp");
   }
   100% {
-    background-image: url("images/voorie.jpg");
+    background-image: url("images/voorie.webp");
   }
 }
 .admissionshero h1{
@@ -3009,16 +3547,16 @@ cursor:pointer;
     background-image: url("images/athl.webp");
   }
   25% {
-    background-image: url("images/primcri.png");
+    background-image: url("images/primcri.webp");
   }
   50% {
-    background-image: url("images/netball.jpg");
+    background-image: url("images/netball.webp");
   }
   75% {
-    background-image: url("images/swmg.jpg");
+    background-image: url("images/swmg.webp");
   }
   100% {
-    background-image: url("images/sport3.jpg");
+    background-image: url("images/sport3.webp");
   }
 }
 .sp-hero-text{
