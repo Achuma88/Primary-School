@@ -47,50 +47,7 @@ body {
 }
 
 /* MOTTO RIBBON */
-.motto-banner{
 
-    margin-top:6px;
-
-    background:#f28c28;
-
-    color:#1d2c6b;
-
-    font-size:11px;
-    font-weight:700;
-
-    letter-spacing:4px;
-
-    padding:4px 14px;
-
-    border-radius:3px;
-
-    position:relative;
-
-    transform:skew(-12deg);
-
-    box-shadow:
-    0 4px 10px rgba(0,0,0,0.25);
-}
-
-/* TEXT STRAIGHT */
-.motto-banner::before{
-    content:"SERVAMUS";
-
-    position:absolute;
-
-    inset:0;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    transform:skew(12deg);
-}
-
-/* HIDE ORIGINAL TEXT */
-.motto-banner{
-    color:transparent;
-}
 
 /* SCHOOL NAME */
 .logo-text{
@@ -294,34 +251,120 @@ nav ul li a i{
     border-left: 4px solid #ffd500;
   }
 
-  /* FOOTER */
-  .sidebar-footer{
+ /* FOOTER */
+.sidebar-footer{
+  margin-top:auto;
 
-    margin-top:auto;
+  display:flex;
+  flex-direction:column;
 
-    display:flex;
+  align-items:center;
+  justify-content:center;
 
-    flex-direction:column;
+  padding:25px 0;
+}
 
-    align-items:center;
+/* CONTAINER */
+/* FOOTER */
+.sidebar-footer{
 
-    justify-content:center;
+  margin-top:auto;
 
-    padding:25px 0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  padding:25px 0;
+}
+
+/* FLIP BOX */
+.flip-box{
+
+  width:120px;
+  height:80px;
+
+  perspective:1000px;
+
+  margin-bottom:150px;
+}
+
+/* INNER SPIN */
+.flip-inner{
+
+  position:relative;
+
+  width:100%;
+  height:100%;
+
+  transform-style:preserve-3d;
+
+  animation:infiniteFlip 10s infinite ease-in-out;
+}
+
+/* BOTH SIDES */
+.flip-face{
+
+  position:absolute;
+
+  width:100%;
+  height:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  backface-visibility:hidden;
+}
+
+/* FRONT */
+.front img{
+
+  width:75px;
+
+  object-fit:contain;
+}
+
+/* BACK */
+.back{
+
+  color:white;
+
+  font-size:20px;
+
+  font-weight:700;
+
+  letter-spacing:3px;
+
+  transform:rotateY(180deg);
+}
+
+/* SMOOTH INFINITE SIDEWAYS FLIP */
+@keyframes infiniteFlip{
+
+  /* LOGO STAYS */
+  0%{
+    transform:rotateY(0deg);
   }
 
-  /* LOGO */
-  .sidebar-logo {
-
-    width: 75px;
-
-    opacity: 0.95;
-
-    margin-bottom: 150px;
-
-    object-fit: contain;
+  30%{
+    transform:rotateY(0deg);
   }
 
+  /* SLOW FLIP */
+  50%{
+    transform:rotateY(180deg);
+  }
+
+  /* TEXT STAYS */
+  80%{
+    transform:rotateY(180deg);
+  }
+
+  /* SLOW RETURN */
+  100%{
+    transform:rotateY(360deg);
+  }
+}
   /* SCHOOL NAME */
  .sidebar-footer p{
 
