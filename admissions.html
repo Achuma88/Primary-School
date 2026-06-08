@@ -130,32 +130,122 @@
 
 <!-- UNIFORM -->
 <section class="uniform">
-  <h2>School Uniform</h2>
 
-  <div class="uniform-cards">
+   <div class="uniform-heading">
+        <h2>School Uniform</h2>
+
+        <div class="heading-divider">
+            <span class="line blue"></span>
+
+            <img src="images/logo.webp" alt="School Logo">
+
+            <span class="line green"></span>
+        </div>
+
+        <p>
+            Our uniform represents pride, unity and a sense of belonging.
+            Learners are expected to wear the correct uniform with pride every day.
+        </p>
+    </div>
+
+  <div class="uniform-tabs">
+
+        <button class="tab-btn active"
+            onclick="openUniformTab(event,'pe')">
+            🏃 Phys Ed
+        </button>
+
+        <button class="tab-btn"
+            onclick="openUniformTab(event,'summer')">
+           🧒 Boys
+        </button>
+
+        <button class="tab-btn"
+            onclick="openUniformTab(event,'winter')">
+            👧 Girls
+        </button>
+
+    </div>
+
+    <!-- PHYS ED -->
+    <div id="pe" class="tab-content active">
+
+        <div class="uniform-grid">
+
+            <div class="uniform-card"
+                 onclick="openImage(this)">
+                <img src="images/fnduni.webp">
+                <h3>Foundation Boys PE</h3>
+            </div>
+
+            <div class="uniform-card"
+                 onclick="openImage(this)">
+                <img src="images/physedgirlsp.webp">
+                <h3>Foundation Girls PE</h3>
+            </div>
+
+            <div class="uniform-card"
+                 onclick="openImage(this)">
+                <img src="images/snruni.webp">
+                <h3>Intermediate & Senior Phase Girls PE</h3>
+            </div>
+
+        </div>
+
+    </div>
 
     <!-- SUMMER -->
-    <div class="uniform-card">
-      <img src="images/fnduni.webp" alt="Summer Uniform">
-      <h3>Foundation Phase Boys Phys Ed Uniform  ☀️</h3>
-      
-    </div>
-      <div class="uniform-card">
-      <img src="images/fndunigirls.webp" alt="Summer Uniform">
-      <h3>Foundation Phase  Uniform </h3>
-      
+    <div id="summer" class="tab-content">
+
+        <div class="uniform-grid">
+
+            <div class="uniform-card" onclick="openImage(this)">
+                <img src="images/foundationboys.webp">
+                <h3>Foundation Boys Summer</h3>
+            </div>
+
+           
+
+            <div class="uniform-card" onclick="openImage(this)">
+                <img src="images/summerboys.webp">
+                <h3>Senior Boys Summer</h3>
+            </div>
+
+           
+
+        </div>
+
     </div>
 
     <!-- WINTER -->
-    <div class="uniform-card">
-      <img src="images/snruni.webp" alt="Winter Uniform">
-      <h3>GR 4 - 7 Phys Ed</h3>
-      
-    </div>
-    
+    <div id="winter" class="tab-content">
 
-  </div>
+        <div class="uniform-grid">
+
+            <div class="uniform-card" onclick="openImage(this)">
+                <img src="images/fndunigirls.webp">
+                <h3>Foundation Girls Summer</h3>
+            </div>
+
+            <div class="uniform-card" onclick="openImage(this)">
+                <img src="images/summergirls.webp">
+                <h3>Senior Girls Summer</h3>
+            </div>
+
+        </div>
+
+    </div>
 </section>
+<div id="imageModal" class="modal">
+
+    <span class="close-modal"
+          onclick="closeImage()">
+          &times;
+    </span>
+
+    <img id="modalImg">
+
+</div>
 <!-- REQUIRED DOCUMENTS -->
 <section class="documents">
   <h2>Required Documents</h2>
@@ -378,7 +468,45 @@ function revealOnScroll() {
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
- </script>
+function openUniformTab(evt, tabId){
+
+    document
+    .querySelectorAll(".tab-content")
+    .forEach(tab =>
+        tab.classList.remove("active"));
+
+    document
+    .querySelectorAll(".tab-btn")
+    .forEach(btn =>
+        btn.classList.remove("active"));
+
+    document
+    .getElementById(tabId)
+    .classList.add("active");
+
+    evt.currentTarget
+       .classList.add("active");
+}
+
+
+function openImage(card){
+
+    const img =
+    card.querySelector("img");
+
+    document.getElementById("modalImg")
+    .src = img.src;
+
+    document.getElementById("imageModal")
+    .style.display = "flex";
+}
+
+function closeImage(){
+
+    document.getElementById("imageModal")
+    .style.display = "none";
+}
+</script>
 </body>
 
 </html>

@@ -164,7 +164,15 @@
 
         <div class="card-buttons">
           <button class="btn-secondary toggle-subjects">View Subjects</button>
-          <a href="docs/foundation_phase_stationery_list.pdf" class="btn-secondary">Stationery List</a>
+         <div class="dropdown">
+           <button type="button" class="btn-secondary dropdown-btn" onclick="toggleDropdown(this)">Stationery List</button>
+           <div class="dropdown-content">
+             <a href="docs/grade_r_stationery.pdf">Grade R</a>
+             <a href="docs/grade_1_stationery.pdf">Grade 1</a>
+             <a href="docs/grade_2_stationery.pdf">Grade 2</a>
+             <a href="docs/grade_3_stationery.pdf">Grade 3</a>
+           </div>
+         </div>
         </div>
       </div>
     </div>
@@ -203,7 +211,15 @@
 
         <div class="card-buttons">
           <button class="btn-secondary toggle-subjects">View Subjects</button>
-          <a href="docs/intermediate_phase_stationery_list.pdf" class="btn-secondary">Stationery List</a>
+         <div class="dropdown">
+           <button type="button" class="btn-secondary dropdown-btn" onclick="toggleDropdown(this)">Stationery List</button>
+           <div class="dropdown-content">
+             <a href="docs/grade_r_stationery.pdf">Grade R</a>
+             <a href="docs/grade_1_stationery.pdf">Grade 1</a>
+             <a href="docs/grade_2_stationery.pdf">Grade 2</a>
+             <a href="docs/grade_3_stationery.pdf">Grade 3</a>
+           </div>
+         </div>
         </div>
       </div>
     </div>
@@ -468,6 +484,28 @@ const observer = new IntersectionObserver(entries => {
 cards.forEach(card => {
   card.classList.add("hidden");
   observer.observe(card);
+});
+function toggleDropdown(button){
+
+    const dropdown = button.parentElement;
+
+    document.querySelectorAll('.dropdown').forEach(item => {
+        if(item !== dropdown){
+            item.classList.remove('active');
+        }
+    });
+
+    dropdown.classList.toggle('active');
+}
+
+document.addEventListener('click', function(event){
+
+    if(!event.target.closest('.dropdown')){
+        document.querySelectorAll('.dropdown').forEach(item => {
+            item.classList.remove('active');
+        });
+    }
+
 });
 </script>
 
