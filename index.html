@@ -241,11 +241,52 @@
 </div>
 
 </section>
-<!-- OUR STORY -->
-<!-- OUR STORY -->
+<section class="school-stats">
+    <div class="section-header">
+        <h2>School at a Glance</h2>
+        <p>Providing quality education, sport and personal growth opportunities.</p>
+    </div>
 
-<!-- LEARNING -->
-<!-- LEARNING -->
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <span class="stat-icon">👨‍🎓</span>
+              <h3 class="counter" data-target="400">0</h3>
+            <p>Learners</p>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon">📚</span>
+            <h3 class="counter no-plus" data-target="9">0</h3>
+            <p>Subjects</p>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon">🏆</span>
+           <h3 class="counter" data-target="5">0</h3>
+            <p>Sports Codes</p>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon">👩‍🏫</span>
+             <h3 class="counter" data-target="30">0</h3>
+            <p>Teachers</p>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon">⭐</span>
+            <h3 class="counter percent" data-target="100">0</h3>
+            <p>Commitment</p>
+        </div>
+
+        <div class="stat-card">
+            <span class="stat-icon">🎨</span>
+             <h3 class="counter" data-target="5">0</h3>
+            <p>Activities</p>
+        </div>
+
+    </div>
+</section>
 
 <!-- NEWS & ANNOUNCEMENTS -->
 <section class="news-section">
@@ -468,6 +509,57 @@ function revealOnScroll() {
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
 
+
+const counters = document.querySelectorAll('.counter');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        const counter = entry.target;
+        const target = +counter.dataset.target;
+
+        let current = 0;
+        const increment = target / 60;
+
+        const updateCounter = () => {
+            current += increment;
+
+            if (current < target) {
+
+                if (counter.classList.contains('percent')) {
+                    counter.textContent = Math.ceil(current) + '%';
+                } 
+                else if (counter.classList.contains('no-plus')) {
+                    counter.textContent = Math.ceil(current);
+                } 
+                else {
+                    counter.textContent = Math.ceil(current) + '+';
+                }
+
+                requestAnimationFrame(updateCounter);
+
+            } else {
+
+                if (counter.classList.contains('percent')) {
+                    counter.textContent = target + '%';
+                } 
+                else if (counter.classList.contains('no-plus')) {
+                    counter.textContent = target;
+                } 
+                else {
+                    counter.textContent = target + '+';
+                }
+
+            }
+        };
+
+        updateCounter();
+        observer.unobserve(counter);
+    });
+});
+
+counters.forEach(counter => observer.observe(counter));
 
 </script>
 
