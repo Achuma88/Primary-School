@@ -4220,12 +4220,12 @@ cursor:pointer;
 .sp-hero {
   padding: 150px 8% 100px 8%;
   color: white;
-  text-align: center;
   height: 80vh; /* SAME SIZE EVERYWHERE */
   min-height: 500px;
+  text-align: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(rgba(5,19,62,0.7), rgba(5,19,62,0.7));
+  background: linear-gradient(rgba(1, 6, 23, 0.7), rgba(1, 8, 30, 0.7));
 }
 
 .sp-hero::before {
@@ -4247,16 +4247,16 @@ cursor:pointer;
 }
 @keyframes spheroSlide {
   0% {
-    background-image: url("images/athl.webp");
+    background-image: url("images/net.webp");
   }
   25% {
-    background-image: url("images/primcri.webp");
+    background-image: url("images/rug.webp");
   }
   50% {
-    background-image: url("images/netball.webp");
+    background-image: url("images/swmming.webp");
   }
   75% {
-    background-image: url("images/swmg.webp");
+    background-image: url("images/schlcrkt.webp");
   }
   100% {
     background-image: url("images/sport3.webp");
