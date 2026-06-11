@@ -1201,7 +1201,7 @@ button {
   background: linear-gradient(135deg, #7aa8f1, #0ea5c6);
   text-align: center;
   padding: 70px 20px;
-  color: #05133e;
+  color: #ffffff;
 }
 
 .footer-top h2 {
@@ -3340,7 +3340,12 @@ transition:0.3s;
   content: "";
   position: absolute;
   inset: 0;
-  
+
+  background: linear-gradient(
+    rgba(11,43,139,0.3),
+    rgba(1, 15, 55, 0.3)
+  );
+
   z-index: -1;
 }
 @keyframes cultureheroSlide {
@@ -3348,13 +3353,13 @@ transition:0.3s;
     background-image: url("images/vlife.webp");
   }
   25% {
-    background-image: url("images/vlife.webp");
+    background-image: url("images/wfd.webp");
   }
   50% {
-    background-image: url("images/sgb2.webp");
+    background-image: url("images/sgbbraai.webp");
   }
   75% {
-    background-image: url("images/swmg.webp");
+    background-image: url("images/bw.webp");
   }
   100% {
     background-image: url("images/blg3.webp");
@@ -4452,7 +4457,10 @@ cursor:pointer;
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(rgba(1, 6, 23, 0.7), rgba(1, 8, 30, 0.7));
+  background: linear-gradient(
+    rgba(5,19,62,0.2),
+    rgba(5,19,62,0.2)
+  );
 }
 
 .sp-hero::before {
@@ -4471,8 +4479,8 @@ cursor:pointer;
   inset: 0;
 
   background: linear-gradient(
-    rgba(0, 20, 70, 0.75),
-    rgba(0, 20, 70, 0.75)
+    rgba(11,43,139,0.3),
+    rgba(2, 27, 102, 0.3)
   );
 
   z-index: -1;
@@ -4553,95 +4561,6 @@ sp-hero-text{
 }
 
 /* ===================================
-   SPORTS GALLERY
-=================================== */
-.sports-gallery{
-    padding:100px 20px;
-    background:#02102b;
-    text-align:center;
-}
-
-.sports-gallery h2{
-    font-size:3rem;
-    margin-bottom:60px;
-    color:#6ea8ff;
-}
-
-.gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-
-    max-width:1300px;
-    margin:auto;
-}
-
-.gallery-card{
-    overflow:hidden;
-    border-radius:20px;
-    position:relative;
-    cursor:pointer;
-}
-
-.gallery-card img{
-    width:100%;
-    height:280px;
-    object-fit:cover;
-    transition:0.5s ease;
-}
-
-.gallery-card:hover img{
-    transform:scale(1.08);
-}
-
-/* ===================================
-   IMAGE MODAL
-=================================== */
-.image-modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.9);
-
-    justify-content:center;
-    align-items:center;
-
-    z-index:9999;
-}
-
-.modal-image{
-    max-width:90%;
-    max-height:85vh;
-    border-radius:20px;
-}
-
-.close-btn{
-    position:absolute;
-    top:30px;
-    right:40px;
-
-    font-size:30px;
-    background:none;
-    border:none;
-    color:white;
-    cursor:pointer;
-}
-
-/* ===================================
-   ANIMATIONS
-=================================== */
-.reveal{
-    opacity:0;
-    transform:translateY(60px);
-    transition:1s ease;
-}
-
-.reveal.active{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* ===================================
    MOBILE RESPONSIVE
 =================================== */
 @media(max-width:768px){
@@ -4681,6 +4600,84 @@ sp-hero-text{
 }
 .card p{
   color:#0891b2
+}
+/* Sports Benefits Section */
+.sports-benefits{
+    padding: 80px 8%;
+    background: #07159b;
+}
+
+.section-header{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.sec-header h2{
+    font-size: 2.5rem;
+    color: #fdfdfd;
+    margin-bottom: 15px;
+}
+
+.sec-header p{
+    max-width: 750px;
+    margin: auto;
+    color: #fefcfc;
+    line-height: 1.8;
+}
+
+.benefits-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 25px;
+}
+
+.benefit-card{
+    background: #07159b;
+    padding: 35px 25px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.4s ease;
+    border-top: 4px solid #050573;
+}
+
+.benefit-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.benefit-card i{
+    font-size: 3rem;
+    color: #16d9f3;
+    margin-bottom: 20px;
+}
+
+.benefit-card h3{
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #fcfcfc;
+}
+
+.benefit-card p{
+    color: white;
+    line-height: 1.7;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    .sports-benefits{
+        padding: 60px 5%;
+    }
+
+    .section-header h2{
+        font-size: 2rem;
+    }
+
+    .benefit-card{
+        padding: 30px 20px;
+    }
+
 }
 /* =========================
    AFTERCARE HERO
