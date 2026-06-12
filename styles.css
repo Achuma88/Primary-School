@@ -1352,19 +1352,19 @@ button {
 }
 @keyframes pageheroSlide {
   0% {
-    background-image: url("images/clss.webp");
+    background-image: url("images/aca5.webp");
   }
   25% {
-    background-image: url("images/clssrm.webp");
+    background-image: url("images/aca6.webp");
   }
   50% {
-    background-image: url("images/happy.webp");
+    background-image: url("images/aca7.webp");
   }
   75% {
-    background-image: url("images/vpp.webp");
+    background-image: url("images/aca10.webp");
   }
   100% {
-    background-image: url("images/cring.webp");
+    background-image: url("images/aca3.webp");
   }
 }
 /* TEXT */
