@@ -1,7 +1,7 @@
-VP Primary School Website
+Voorpos Primary School Website
 
-A full-stack primary school website designed to showcase school information, grades offered, sports, events, and learner support.
-The project includes a frontend website and a Node.js/Express backend API.
+A primary school website designed to showcase school information, grades offered, sports, events, and learner support.
+The project includes a frontend website.
 
 📌 Features
 
@@ -12,9 +12,6 @@ The project includes a frontend website and a Node.js/Express backend API.
 
 ⚽ Sports section with individual sport pages
 
-📅 School events (List & Calendar view)
-
-📨 Contact form (API-ready)
 
 🎨 Modern, responsive UI using HTML, CSS & JavaScript
 
@@ -27,8 +24,4 @@ CSS3
 
 JavaScript 
 
-Backend
-Node.js 
 
-
-CORS
