@@ -1948,7 +1948,8 @@ button {
 .story-hero {
   padding: 120px 20px 80px; /* 👈 FIXED: no % padding */
   color: white;
-  min-height: 60vh;         /* 👈 more flexible */
+  height: 80vh; /* SAME SIZE EVERYWHERE */
+  min-height: 500px;        /* 👈 more flexible */
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -4417,80 +4418,294 @@ sp-hero-text{
 }
 /* Sports Benefits Section */
 .sports-benefits{
-    padding: 80px 8%;
-    background: #07159b;
+    position: relative;
+    padding: 100px 8%;
+    overflow: hidden;
+
+    /* Your generated wallpaper */
+    background:
+        linear-gradient(rgba(5,15,70,.88), rgba(6,20,95,.92)),
+        url("../images/sportsec3.webp") center/cover no-repeat;
 }
 
-.section-header{
-    text-align: center;
-    margin-bottom: 50px;
+/* Decorative circles */
+.sports-benefits::before{
+    content: "";
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    right: -180px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 2px solid rgba(255,255,255,.05);
+    border-radius: 50%;
+}
+
+.sports-benefits::after{
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    right: -250px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 2px solid rgba(255,255,255,.03);
+    border-radius: 50%;
+}
+
+
+/* ==========================
+   HEADER
+========================== */
+
+.sec-header{
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+    margin-bottom: 60px;
+}
+
+.sec-header span{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #26d9ff;
+    font-size: .95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.sec-header span::before{
+    content: "";
+    width: 40px;
+    height: 3px;
+    background: #26d9ff;
 }
 
 .sec-header h2{
-    font-size: 2.5rem;
-    color: #fdfdfd;
-    margin-bottom: 15px;
+    font-size: clamp(2.5rem,5vw,4rem);
+    font-weight: 700;
+    color: white;
+    margin: 18px 0;
+    line-height: 1.2;
+}
+
+.sec-header h2 span{
+    color: #2ad8ff;
 }
 
 .sec-header p{
-    max-width: 750px;
-    margin: auto;
-    color: #fefcfc;
-    line-height: 1.8;
+    color: rgba(255,255,255,.85);
+    line-height: 1.9;
+    font-size: 1.05rem;
+    max-width: 700px;
 }
 
+
+/* ==========================
+   CARDS
+========================== */
+
 .benefits-container{
+    position: relative;
+    z-index: 2;
+
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+    gap: 30px;
 }
 
 .benefit-card{
-    background: #07159b;
-    padding: 35px 25px;
-    border-radius: 18px;
-    text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: 0.4s ease;
-    border-top: 4px solid #050573;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 40px 30px;
+    border-radius: 24px;
+
+    background: rgba(10,33,120,.45);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.35),
+        inset 0 1px rgba(255,255,255,.08);
+
+    transition: .45s ease;
 }
 
 .benefit-card:hover{
-    transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+
+    transform: translateY(-12px);
+
+    border-color: rgba(38,217,255,.55);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.45),
+        0 0 30px rgba(38,217,255,.20);
 }
+
+
+/* Decorative Icon Circle */
 
 .benefit-card i{
-    font-size: 3rem;
-    color: #16d9f3;
-    margin-bottom: 20px;
+
+    width: 90px;
+    height: 90px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto auto 25px;
+
+    border-radius: 50%;
+
+    font-size: 2.5rem;
+
+    color: #2ad8ff;
+
+    background: linear-gradient(
+        180deg,
+        rgba(37,134,255,.4),
+        rgba(0,82,255,.15)
+    );
+
+    border: 2px solid rgba(38,217,255,.25);
+
+    box-shadow:
+        0 0 25px rgba(38,217,255,.15);
 }
+
+
+/* Heading */
 
 .benefit-card h3{
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    color: #fcfcfc;
+
+    color: white;
+    font-size: 1.55rem;
+    margin-bottom: 18px;
+    text-align: center;
 }
 
-.benefit-card p{
-    color: white;
-    line-height: 1.7;
+
+/* Decorative Line */
+
+.benefit-card h3::after{
+
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 4px;
+
+    margin: 15px auto 0;
+
+    background: #2ad8ff;
+    border-radius: 50px;
 }
+
+
+/* Paragraph */
+
+.benefit-card p{
+
+    color: rgba(255,255,255,.88);
+
+    line-height: 1.9;
+
+    font-size: .98rem;
+
+    text-align: center;
+}
+
+
+/* Watermark */
+
+.benefit-card::before{
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -70px;
+    bottom: -70px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.05);
+}
+
+
+/* Top Highlight */
+
+.benefit-card::after{
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #26d9ff,
+        #4f7cff
+    );
+
+    opacity: 0;
+
+    transition: .4s;
+}
+
+.benefit-card:hover::after{
+    opacity: 1;
+}
+
 
 /* Responsive */
 @media(max-width:768px){
 
-    .sports-benefits{
-        padding: 60px 5%;
+     .sports-benefits{
+        padding:70px 6%;
     }
 
-    .section-header h2{
-        font-size: 2rem;
+    .sec-header{
+        text-align:center;
+        margin:auto auto 50px;
+    }
+
+    .sec-header span{
+        justify-content:center;
     }
 
     .benefit-card{
-        padding: 30px 20px;
+        padding:35px 25px;
     }
+
+    .benefit-card i{
+        width:80px;
+        height:80px;
+        font-size:2rem;
+    }
+
+    .benefit-card h3{
+        font-size:1.35rem;
+    }
+
 
 }
 /* =========================
