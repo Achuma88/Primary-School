@@ -603,175 +603,42 @@ nav ul li a i{
 .features{
 
     position:relative;
-
     overflow:hidden;
-
-    isolation:isolate;
-
-    background:linear-gradient(
-        rgba(3,18,79,.88),
-        rgba(3,18,79,.88)
-    );
+    background:#03124f;
 }
 
-/* Animated Wallpaper */
+.flagCanvas{
 
-.features::before{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    z-index:0;
+}
+
+.features>*:not(.flagCanvas){
+
+    position:relative;
+    z-index:2;
+}
+
+.features::after{
 
     content:"";
 
     position:absolute;
-
     inset:0;
 
-    background:url("images/mb2.webp") center/cover no-repeat;
-
-    opacity:.35;
-
-    z-index:-1;
-
-    
-
-    transform-origin:center;
-
-    animation:flagWave 9s ease-in-out infinite;
-
-    will-change:transform;
-}
-
-/* Keep content above wallpaper */
-
-.features > *{
-
-    position:relative;
-
-    z-index:2;
-}
-
-/* Ken Burns Animation */
-@keyframes flagWave{
-
-    0%{
-
-        transform:
-            perspective(1800px)
-            rotateY(0deg)
-            rotateX(0deg)
-            scale(1.08)
-            translateX(0px);
-    }
-
-    15%{
-
-        transform:
-            perspective(1800px)
-            rotateY(-1.2deg)
-            rotateX(.4deg)
-            scale(1.085)
-            translateX(-8px);
-    }
-
-    30%{
-
-        transform:
-            perspective(1800px)
-            rotateY(1.3deg)
-            rotateX(-.3deg)
-            scale(1.09)
-            translateX(10px);
-    }
-
-    45%{
-
-        transform:
-            perspective(1800px)
-            rotateY(-1deg)
-            rotateX(.5deg)
-            scale(1.085)
-            translateX(-6px);
-    }
-
-    60%{
-
-        transform:
-            perspective(1800px)
-            rotateY(1deg)
-            rotateX(-.4deg)
-            scale(1.09)
-            translateX(7px);
-    }
-
-    75%{
-
-        transform:
-            perspective(1800px)
-            rotateY(-.8deg)
-            rotateX(.2deg)
-            scale(1.085)
-            translateX(-5px);
-    }
-
-    100%{
-
-        transform:
-            perspective(1800px)
-            rotateY(0deg)
-            rotateX(0deg)
-            scale(1.08)
-            translateX(0px);
-    }
-
-}
-.features .cloth-light{
-
-    position:absolute;
-
-    inset:-20%;
-
-    pointer-events:none;
-
-    z-index:0;
-
-    background:
-    linear-gradient(
-        110deg,
-        transparent 20%,
-        rgba(255,255,255,.10) 45%,
-        rgba(255,255,255,.22) 50%,
-        rgba(255,255,255,.10) 55%,
-        transparent 80%
+    background:linear-gradient(
+        rgba(3,18,79,.75),
+        rgba(3,18,79,.80)
     );
 
-    mix-blend-mode:screen;
-
-    animation:lightWave 10s ease-in-out infinite;
-}
-@keyframes lightWave{
-
-    0%{
-
-        transform:
-        translateX(-12%)
-        translateY(0)
-        rotate(-6deg);
-    }
-
-    50%{
-
-        transform:
-        translateX(12%)
-        translateY(-1%)
-        rotate(-4deg);
-    }
-
-    100%{
-
-        transform:
-        translateX(-12%)
-        translateY(0)
-        rotate(-6deg);
-    }
-
+    z-index:1;
 }
 .section-header{
 
@@ -2186,13 +2053,47 @@ button {
 /* ==========================
    VISION SECTION
 ========================== */
+.vision-section{
 
-.vision-section {
-   position:relative;
-    background-image:url("images/mb2.webp");
-    background-repeat:no-repeat;
+    position:relative;
     overflow:hidden;
+    background:#03124f;
 }
+
+.flagCanvas{
+
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    z-index:0;
+}
+
+.vision-section>*:not(.flagCanvas){
+
+    position:relative;
+    z-index:2;
+}
+
+.vision-section::after{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        rgba(3,18,79,.75),
+        rgba(3,18,79,.80)
+    );
+
+    z-index:1;
+}
+
 /*==============================
     SCHOOL STATS
 ===============================*/
@@ -4390,7 +4291,7 @@ cursor:pointer;
 display:flex;
 align-items:center;
 justify-content:center;
-
+z-index:9999;
 font-size:26px;
 }
 /* HERO */
