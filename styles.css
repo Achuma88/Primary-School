@@ -3669,15 +3669,7 @@ align-items:center;
     margin-bottom:15px;
 }
 
-.sports-header h2::after{
-    content:"";
-    display:block;
-    width:120px;
-    height:5px;
-    margin:18px auto 0;
-    border-radius:10px;
-    background:#3b82f6;
-}
+
 
 .sports-header p{
     max-width:750px;
@@ -4201,15 +4193,7 @@ line-height:1.6;
     color:#ffffff;
 }
 
-.culture-quote h2::after{
-    content:"";
-    width:90px;
-    height:4px;
-    background:#f4c542;
-    display:block;
-    margin:20px auto 0;
-    border-radius:10px;
-}
+
 
 .culture-quote p{
     font-size:1.1rem;
@@ -5161,10 +5145,12 @@ sp-hero-text{
 ========================== */
 
 .sec-header{
-    position: relative;
-    z-index: 2;
-    max-width: 760px;
-    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 60px;
 }
 
 .sec-header span{
@@ -5185,24 +5171,24 @@ sp-hero-text{
     height: 3px;
     background: #26d9ff;
 }
-
 .sec-header h2{
-    font-size: clamp(2.5rem,5vw,4rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
-    color: white;
+    color: #fff;
     margin: 18px 0;
     line-height: 1.2;
+    text-align: center;
 }
 
 .sec-header h2 span{
     color: #2ad8ff;
 }
-
 .sec-header p{
-    color: rgba(255,255,255,.85);
-    line-height: 1.9;
-    font-size: 1.05rem;
-    max-width: 700px;
+    max-width: 750px;
+    margin: 25px auto 0;
+    text-align: center;
+    color: rgba(255,255,255,.9);
+    line-height: 1.8;
 }
 
 
