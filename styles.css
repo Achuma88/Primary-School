@@ -664,7 +664,7 @@ nav ul li a i{
 
 .section-header h2{
 
-    font-size:4rem;
+    font-size:3rem;
     color:white;
     margin-bottom:20px;
 }
@@ -1084,7 +1084,7 @@ button {
 }
 
 .section-header h2 {
-  font-size: 30px;
+  font-size: 20px;
   color: var(--primary);
   margin-bottom: 10px;
 }
@@ -1096,7 +1096,330 @@ button {
   font-family:'Calibri'; 
   font-size: 20px;
 }
+.learning-title{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:20px;
+    line-height:1.05;
+}
 
+/* First line */
+
+.learning-title .line-one{
+
+    font-size:3rem;
+    font-weight:700;
+
+    background:linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #edf4ff 55%,
+        #d8e6ff 100%
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+
+    text-shadow:
+        0 4px 20px rgba(255,255,255,.08);
+}
+@media (max-width:768px){
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+.learning-section,
+.academics-overview,
+.extra-classes{
+    padding:70px 18px;
+}
+
+.section-header{
+    margin-bottom:40px;
+    text-align:center;
+}
+
+.section-header h2{
+    font-size:2.5rem;
+    line-height:1.1;
+}
+
+.section-header p{
+    max-width:330px;
+    margin:20px auto 0;
+    font-size:1rem;
+    line-height:1.7;
+}
+
+/* =====================================================
+   LEARNING SECTION
+===================================================== */
+
+.learning-container{
+    display:flex;
+    flex-direction:column-reverse;
+    gap:35px;
+}
+
+.image-slider{
+    width:100%;
+    border-radius:20px;
+}
+
+.learning-text{
+    text-align:left;
+}
+
+.learning-text h2{
+    font-size:2.3rem;
+}
+
+.learning-text p{
+    text-align:left;
+    line-height:1.8;
+    font-size:1rem;
+}
+
+.teaching-points{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+}
+
+.point{
+    padding:14px 18px;
+    background:rgba(255,255,255,.06);
+    border-radius:14px;
+    text-align:left;
+}
+
+/* =====================================================
+   CURRICULUM
+===================================================== */
+
+.overview-grid{
+    grid-template-columns:1fr;
+    gap:22px;
+}
+
+.overview-card{
+    border-radius:22px;
+    overflow:hidden;
+}
+
+.card-header{
+    padding:16px 20px;
+    font-size:1.05rem;
+}
+
+.card-body{
+    padding:22px 20px;
+}
+
+/* Make cards much shorter */
+
+.card-top{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:12px;
+}
+
+.card-content{
+    width:100%;
+}
+
+.card-title{
+    font-size:2rem;
+    margin-bottom:12px;
+}
+
+.card-text{
+    font-size:1rem;
+    line-height:1.6;
+    margin:0;
+}
+
+.card-image{
+    margin:10px 0;
+}
+
+.card-image img{
+    width:85px;
+    height:auto;
+}
+
+/* Hidden until button is clicked */
+
+.more-text,
+.subjects-list{
+    display:none;
+}
+
+.subjects-list{
+    margin-top:20px;
+    padding:18px;
+    border-radius:15px;
+}
+
+.subjects-list h4{
+    font-size:1.1rem;
+}
+
+.subjects-list li{
+    font-size:.95rem;
+}
+
+/* Buttons */
+
+.card-buttons{
+    margin-top:22px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.card-buttons button,
+.dropdown,
+.dropdown-btn{
+    width:100%;
+}
+
+.btn-secondary{
+    padding:14px;
+    font-size:.95rem;
+}
+
+/* =====================================================
+   EXTRA CLASSES
+===================================================== */
+
+.extra-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+}
+
+.extra-card{
+    padding:22px;
+}
+
+.extra-card h3{
+    font-size:1.25rem;
+}
+
+.extra-card p{
+    font-size:.95rem;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer-grid{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+    text-align:center;
+}
+
+.footer-column{
+    margin:0;
+}
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.heading-divider{
+    gap:12px;
+}
+
+.heading-divider img{
+    width:40px;
+}
+
+.heading-divider .line{
+    width:70px;
+}
+
+/* =====================================================
+   TITLES
+===================================================== */
+
+.learning-title .line-one{
+    font-size:2.2rem;
+}
+
+.learning-title .line-two{
+    font-size:2.6rem;
+}
+
+}
+/* Second line */
+
+.learning-title .line-two{
+
+    font-size:3.3rem;
+    font-weight:700;
+
+    background:linear-gradient(
+        90deg,
+        #1fa3ff 0%,
+        #3fc2ff 35%,
+        #59e2d0 65%,
+        #9eea43 100%
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+
+    text-shadow:
+        0 6px 25px rgba(0,180,255,.15);
+
+    margin-top:5px;
+}
+/* ==========================
+   Learning Section
+========================== */
+
+.learning-section{
+    position: relative;
+    overflow: hidden;
+
+    /* Wallpaper */
+    background:
+        linear-gradient(
+            rgba(3,16,63,0.82),
+            rgba(3,16,63,0.82)
+        ),
+        url("images/lrng2.webp");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+
+    padding: 90px 8%;
+}
+
+/* Optional blur overlay for better readability */
+.learning-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at top left,
+        rgba(0,120,255,.12),
+        transparent 45%),
+        radial-gradient(circle at bottom right,
+        rgba(124,255,0,.08),
+        transparent 45%);
+    pointer-events:none;
+}
 .learning-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1211,6 +1534,24 @@ button {
   width: 100%;
   border-radius: 15px;
   margin-bottom: 15px;
+}
+@media(max-width:768px){
+
+.learning-title{
+
+    text-align:center;
+}
+
+.learning-title .line-one{
+
+    font-size:2.2rem;
+}
+
+.learning-title .line-two{
+
+    font-size:2.5rem;
+}
+
 }
 /* ==========================
    FEATURE CARD IMAGE LOOP
@@ -1948,7 +2289,7 @@ button {
     color:white;
     font-size:3rem;
     margin-bottom:15px;
-    font-weight:700;
+    font-weight:500;
 }
 
 .section-header p{
@@ -2495,11 +2836,25 @@ grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
   
   z-index: -1;
 }
-.story-intro {
-  position: relative;
-  z-index: 2; /* 👈 ADD THIS */
-  padding: 80px 10%;
-  background: #021a60;
+.story-intro{
+    position: relative;
+    z-index: 2;
+    padding: 80px 10%;
+
+    /* Wallpaper */
+    background-image:
+        linear-gradient(
+            rgba(2, 26, 96, 0.82),
+            rgba(2, 26, 96, 0.82)
+        ),
+        url("images/history.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional parallax effect */
+
+    overflow: hidden;
 }
 .story-container {
   display: flex;
@@ -2595,10 +2950,6 @@ margin-bottom:10px;
 
 /* INTRO */
 
-.story-intro {
-  padding: 80px 10%;
-  background: #021a60;
-}
 
 .story-hero p{
   color:white;
@@ -2613,6 +2964,10 @@ align-items:center;
   .story-container {
     grid-template-columns: 1fr; /* stack on small screens */
   }
+  .story-intro{
+        background-attachment: scroll;
+    }
+
 }
 .story-text {
   position: relative;
@@ -3780,7 +4135,7 @@ transition:0.3s;
 .section-header h2{
     color:#fff;
     font-size:clamp(3rem,5vw,4.8rem);
-    font-weight:800;
+    font-weight:500;
     margin-bottom:20px;
 }
 
@@ -4193,7 +4548,15 @@ line-height:1.6;
     color:#ffffff;
 }
 
-
+.culture-quote h2::after{
+    content:"";
+    width:90px;
+    height:4px;
+    background:#f4c542;
+    display:block;
+    margin:20px auto 0;
+    border-radius:10px;
+}
 
 .culture-quote p{
     font-size:1.1rem;
@@ -5184,11 +5547,10 @@ sp-hero-text{
     color: #2ad8ff;
 }
 .sec-header p{
-    max-width: 750px;
-    margin: 25px auto 0;
-    text-align: center;
-    color: rgba(255,255,255,.9);
-    line-height: 1.8;
+    color: rgba(255,255,255,.85);
+    line-height: 1.9;
+    font-size: 1.05rem;
+    max-width: 700px;
 }
 
 
