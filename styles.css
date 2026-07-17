@@ -1790,7 +1790,7 @@ button {
 
     .image-slider{
         justify-content:center;
-        order:-1; /* image appears above the text */
+        order:2; /* image appears above the text */
     }
 
     .image-slider img{

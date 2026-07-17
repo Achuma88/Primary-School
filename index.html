@@ -66,25 +66,25 @@
 
   <div class="sidebar-footer">
 
-<div class="flip-box">
+  <div class="flip-box">
 
     <div class="flip-inner">
 
-        <!-- LOGO -->
-        <div class="flip-face front">
-            <img src="images/logo.webp"
-                 alt="School Logo"
-                 class="sidebar-logo">
-        </div>
+      <!-- LOGO -->
+      <div class="flip-face front">
+        <img src="images/logo.webp"
+             alt="School Logo"
+             class="sidebar-logo">
+      </div>
 
-        <!-- WORD -->
-        <div class="flip-face back">
-            <span id="flipWord">VOLHARD</span>
-        </div>
+      <!-- TEXT -->
+      <div class="flip-face back">
+        VOLHARD
+      </div>
 
     </div>
 
-</div>
+  </div>
 
 </div>
 
@@ -912,24 +912,6 @@ function animateFlag(){
 }
 
 animateFlag();
-
-const words = [
-    "VOLHARD",
-    "PERSEVERE"
-];
-
-let index = 0;
-
-setInterval(() => {
-    index++;
-
-    if(index >= words.length){
-        index = 0;
-    }
-
-    document.getElementById("flipWord").textContent = words[index];
-
-}, 10000);
 </script>
 <script type="module" src="script/flag.js"></script>
 </body>
