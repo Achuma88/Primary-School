@@ -2099,6 +2099,32 @@ button {
 
     color:#bdbdbd;
 }
+.portfolio-link{
+    color: #c8b50d;              /* Gold */
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.portfolio-link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: #7aa8f1;         /* Light blue */
+    transition: width 0.3s ease;
+}
+
+.portfolio-link:hover{
+    color: #7aa8f1;
+}
+
+.portfolio-link:hover::after{
+    width: 100%;
+}
 @media (max-width:768px){
 
 .footer-top{
@@ -2195,6 +2221,30 @@ button {
 
     font-size:.9rem;
 }
+ .portfolio-link{
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+
+        color: #c8b50d;
+        font-weight: 600;
+        text-decoration: none;
+
+        transition: all 0.3s ease;
+    }
+
+    .portfolio-link i{
+        font-size: 0.8rem;
+    }
+
+    .portfolio-link:hover{
+        color: #7aa8f1;
+    }
+
+    .portfolio-link::after{
+        display: none;
+    }
+
 }
 
 /* ===== COPYRIGHT ===== */
