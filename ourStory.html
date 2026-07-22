@@ -61,24 +61,22 @@
      <div class="sidebar-footer">
 
   <div class="flip-box">
-
     <div class="flip-inner">
 
-      <!-- LOGO -->
-      <div class="flip-face front">
-        <img src="images/logo.webp"
-             alt="School Logo"
-             class="sidebar-logo">
-      </div>
+        <!-- Logo -->
+        <div class="flip-face front">
+            <img src="images/logo.webp"
+                 alt="School Logo"
+                 class="sidebar-logo">
+        </div>
 
-      <!-- TEXT -->
-      <div class="flip-face back">
-        VOLHARD
-      </div>
+        <!-- Word -->
+        <div class="flip-face back">
+            <span id="flipWord">VOLHARD</span>
+        </div>
 
     </div>
-
-  </div>
+</div>
 
 </div> 
 </div>
@@ -864,6 +862,16 @@ showMilestone(milestoneIndex);
 
 /* AUTO PLAY */
 setInterval(nextMilestone, 5000);
+const words = ["VOLHARD", "PERSEVERE"];
+const flipWord = document.getElementById("flipWord");
+const flipInner = document.querySelector(".flip-inner");
+
+let index = 0;
+
+flipInner.addEventListener("animationiteration", () => {
+    index = (index + 1) % words.length;
+    flipWord.textContent = words[index];
+});
 </script>
 
 </body>

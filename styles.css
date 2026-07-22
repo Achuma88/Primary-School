@@ -353,28 +353,24 @@ nav ul li a i{
 /* SMOOTH INFINITE SIDEWAYS FLIP */
 @keyframes infiniteFlip{
 
-  /* LOGO STAYS */
-  0%{
-    transform:rotateY(0deg);
+  /* Logo */
+  0%,25%{
+    transform: rotateY(0deg);
   }
 
-  30%{
-    transform:rotateY(0deg);
+  /* Flip to text */
+  40%,60%{
+    transform: rotateY(180deg);
   }
 
-  /* SLOW FLIP */
-  50%{
-    transform:rotateY(180deg);
+  /* Flip back */
+  75%{
+    transform: rotateY(360deg);
   }
 
-  /* TEXT STAYS */
-  80%{
-    transform:rotateY(180deg);
-  }
-
-  /* SLOW RETURN */
+  /* Keep logo visible before restarting */
   100%{
-    transform:rotateY(360deg);
+    transform: rotateY(360deg);
   }
 }
   /* SCHOOL NAME */
