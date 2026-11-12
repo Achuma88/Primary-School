@@ -539,9 +539,10 @@ nav ul li a i{
 }
 
 .hero-text p{
-    color: #fff;
+     color: #fff;
     font-size: 18px;
-    line-height: 1.7;
+    line-height: 1.6;
+    max-width: 700px;
 }
 
 .hero-text br{
@@ -8361,11 +8362,7 @@ sp-hero-text{
         line-height:1.2;
     }
 
-    .hero-text p{
-        font-size:1rem;
-        max-width:100%;
-    }
-
+    
     /* NAVBAR */
     .logo-container{
         gap:10px;
