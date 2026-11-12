@@ -508,12 +508,13 @@ nav ul li a i{
         margin: 0;
     }
     .hero{
-    display: flex;
+      display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 
-    min-height: 100vh; /* Change to 80vh if your hero is 80vh */
+    min-height: 100vh;
 
     padding: 0 20px;
     box-sizing: border-box;
