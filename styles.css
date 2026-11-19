@@ -3938,7 +3938,10 @@ grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
   flex-direction: column;
   text-align: center;
 }
-
+.story-overlay h4 {
+    font-size: 20px;
+    margin: 0 0 24px;
+}
 @keyframes storyheroSlide {
   0% {
     background-image: url("images/oldphoto1.webp");
@@ -7613,9 +7616,8 @@ sp-hero-text{
 }
 
 .intro-text {
-  max-width: 700px;
-  margin-bottom: 40px;
-  line-height: 1.6;
+ margin-bottom: 30px;
+  color:white;
 }
 /* =========================
    OPERATING HOURS CARD
