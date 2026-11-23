@@ -6309,13 +6309,13 @@ cursor:pointer;
     background-image: url("images/voorie.webp");
   }
   25% {
-    background-image: url("images/adm2.webp");
+    background-image: url("images/SchoolGrounds.webp");
   }
   50% {
     background-image: url("images/voorie2.webp");
   }
   75% {
-    background-image: url("images/adm.webp");
+    background-image: url("images/TreeQuad.webp");
   }
   100% {
     background-image: url("images/topView.webp");
@@ -6896,7 +6896,7 @@ cursor:pointer;
     background-image: url("images/sportvp.webp");
   }
   50% {
-    background-image: url("images/swmming.webp");
+    background-image: url("images/sports court.webp");
   }
   75% {
     background-image: url("images/sportphys.webp");
@@ -7389,7 +7389,7 @@ sp-hero-text{
     }
 
     100%{
-        background-image:url("images/afc.webp");
+        background-image:url("images/aftercare garden .webp");
     }
 }
 
