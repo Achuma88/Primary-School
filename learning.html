@@ -11,11 +11,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="preload" as="image" href="images/aca5.webp" type="image/webp">
-  <link rel="preload" as="image" href="images/aca6.webp" type="image/webp">
-  <link rel="preload" as="image" href="images/aca7.webp" type="image/webp">
-  <link rel="preload" as="image" href="images/aca10.webp" type="image/webp">
-  <link rel="preload" as="image" href="images/aca3.webp" type="image/webp">
+  <link rel="preload" as="image" href="images/learnwp.webp" type="image/webp">
+  <link rel="preload" as="image" href="images/learnwp2.webp" type="image/webp">
+  <link rel="preload" as="image" href="images/learnwp3.webp" type="image/webp">
+  <link rel="preload" as="image" href="images/LearnerSupp.webp" type="image/webp">
+  
+ 
 </head>
 
 <body>
@@ -89,6 +90,12 @@
 
 <!-- HERO -->
 <section class="page-hero">
+   <div class="learning-slideshow">
+    <img src="images/learnwp.webp" class="active" alt="">
+    <img src="images/learnwp2.webp" alt="">
+    <img src="images/learnwp3.webp" alt="">
+    <img src="images/LearnerSupp.webp" alt="">
+ </div>
   <div class="page-hero-content">
     <h1>Academics & Learning</h1>
     <p>
@@ -741,6 +748,26 @@ flipInner.addEventListener("animationiteration", () => {
     index = (index + 1) % words.length;
     flipWord.textContent = words[index];
 });
+const learningImages = document.querySelectorAll(
+    ".learning-slideshow img"
+);
+
+let learningIndex = 0;
+
+setInterval(() => {
+
+    learningImages[learningIndex].classList.remove("active");
+
+    learningIndex++;
+
+    if (learningIndex >= learningImages.length) {
+        learningIndex  = 0;
+    }
+
+    learningImages[learningIndex].classList.add("active");
+
+}, 5000);
+
 </script>
 
 </body>

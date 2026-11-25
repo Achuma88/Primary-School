@@ -11,8 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="images/bld1.webp" type="image/webp">
   <link rel="preload" as="image" href="images/bld2.webp" type="image/webp">
-  <link rel="preload" as="image" href="images/voorie3.webp" type="image/webp">
-  <link rel="preload" as="image" href="images/voorie2.webp" type="image/webp">
+  <link rel="preload" as="image" href="images/aftercareplay.webp" type="image/webp">
   <link rel="preload" as="image" href="images/aftercare garden .webp" type="image/webp">
 </head>
 
@@ -87,6 +86,12 @@
 
 <!-- HERO -->
 <section class="aftercare-hero">
+  <div class="aftercare-slideshow">
+    <img src="images/bld1.webp" class="active" alt="">
+    <img src="images/bld2.webp" alt="">
+    <img src="images/aftercareplay.webp" alt="">
+    <img src="images/aftercare garden .webp" alt="">
+ </div>
   <div class="aftercare-hero-text">
     <h1>Aftercare Program</h1>
     <p>
@@ -718,6 +723,25 @@ flipInner.addEventListener("animationiteration", () => {
     index = (index + 1) % words.length;
     flipWord.textContent = words[index];
 });
+const aftercareImages = document.querySelectorAll(
+    ".aftercare-slideshow img"
+);
+
+let aftercareIndex = 0;
+
+setInterval(() => {
+
+    aftercareImages[aftercareIndex].classList.remove("active");
+
+    aftercareIndex++;
+
+    if (aftercareIndex >= aftercareImages.length) {
+        aftercareIndex  = 0;
+    }
+
+    aftercareImages[aftercareIndex].classList.add("active");
+
+}, 5000);
 </script>
 </body>
 </html>

@@ -8,7 +8,7 @@
  <link rel="stylesheet" href="styles.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
- <link rel="preload" as="image" href="images/vlife.webp" type="image/webp">
+ <link rel="preload" as="image" href="images/ChessArea.webp" type="image/webp">
  <link rel="preload" as="image" href="images/wfd.webp" type="image/webp">
  <link rel="preload" as="image" href="images/sgbbraai.webp" type="image/webp">
  <link rel="preload" as="image" href="images/bw.webp" type="image/webp">
@@ -91,7 +91,13 @@
 <!-- HERO SECTION -->
 
 <section class="culture-hero">
-
+<div class="culture-slideshow">
+    <img src="images/blg3.webp" class="active" alt="">
+    <img src="images/topView.webp" alt="">
+    <img src="images/garden.webp" alt="">
+    <img src="images/bld1.webp" alt="">
+    <img src="images/ChessArea.webp" alt="">
+</div>
 <h1>Life at Voorpos Primary</h1>
 
 <br><br><br>
@@ -641,6 +647,25 @@ flipInner.addEventListener("animationiteration", () => {
     index = (index + 1) % words.length;
     flipWord.textContent = words[index];
 });
+const cultureImages = document.querySelectorAll(
+    ".culture-slideshow img"
+);
+
+let cultureIndex = 0;
+
+setInterval(() => {
+
+    cultureImages[cultureIndex].classList.remove("active");
+
+    cultureIndex++;
+
+    if (cultureIndex >= cultureImages.length) {
+        cultureIndex = 0;
+    }
+
+    cultureImages[cultureIndex].classList.add("active");
+
+}, 5000);
 </script>
 
 </body>

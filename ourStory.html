@@ -14,7 +14,7 @@
   <link rel="preload" as="image" href="images/oldphoto2.webp" type="image/webp">
   <link rel="preload" as="image" href="images/oldphoto3.webp" type="image/webp">
   <link rel="preload" as="image" href="images/founders.webp" type="image/webp">
-  <link rel="preload" as="image" href="images/bld2.webp" type="image/webp">
+  
 
 <!-- Story Intro Background -->
 <link rel="preload" as="image" href="images/history.webp" type="image/webp">
@@ -91,6 +91,12 @@
 
 <!-- HERO -->
 <section class="story-hero">
+   <div class="story-slideshow">
+    <img src="images/oldphoto1.webp" class="active" alt="">
+    <img src="images/oldphoto2.webp" alt="">
+    <img src="images/oldphoto3.webp" alt="">
+    <img src="images/founders.webp" alt="">
+ </div>
   <div class="story-overlay">
     <h4>Rooted In Histrory. Inspired By The Future</h4>
 
@@ -894,6 +900,27 @@ flipInner.addEventListener("animationiteration", () => {
     index = (index + 1) % words.length;
     flipWord.textContent = words[index];
 });
+
+const storyImages = document.querySelectorAll(
+    ".story-slideshow img"
+);
+
+let storyIndex = 0;
+
+setInterval(() => {
+
+    storyImages[storyIndex].classList.remove("active");
+
+    storyIndex++;
+
+    if (storyIndex >= storyImages.length) {
+        storyIndex  = 0;
+    }
+
+    storyImages[storyIndex].classList.add("active");
+
+}, 5000);
+
 </script>
 
 </body>

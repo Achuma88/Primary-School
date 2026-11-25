@@ -12,7 +12,7 @@
  <link rel="preload" as="image" href="images/adm2.webp" type="image/webp">
  <link rel="preload" as="image" href="images/voorie2.webp" type="image/webp">
  <link rel="preload" as="image" href="images/adm.webp" type="image/webp">
- <link rel="preload" as="image" href="images/topView.webp" type="image/webp">
+ 
 </head>
 
 <body>
@@ -86,6 +86,12 @@
 
   <!-- HERO SECTION -->
   <section class="admissionshero">
+    <div class="admissions-slideshow">
+    <img src="images/TreeQuad.webp" class="active" alt="">
+    <img src="images/topView.webp" alt="">
+    <img src="images/SchoolGrounds.webp" alt="">
+    <img src="images/voorie2.webp" alt="">
+</div>
      <div class="admissionshero-text">
        <h1>Applications For Admission</h1>
        <br>
@@ -644,6 +650,25 @@ flipInner.addEventListener("animationiteration", () => {
     index = (index + 1) % words.length;
     flipWord.textContent = words[index];
 });
+const admissionsImages = document.querySelectorAll(
+    ".admissions-slideshow img"
+);
+
+let admissionsIndex = 0;
+
+setInterval(() => {
+
+    admissionsImages[admissionsIndex].classList.remove("active");
+
+    admissionsIndex++;
+
+    if (admissionsIndex >= admissionsImages.length) {
+        admissionsIndex = 0;
+    }
+
+    admissionsImages[admissionsIndex].classList.add("active");
+
+}, 5000);
 </script>
 </body>
 

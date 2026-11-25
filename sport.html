@@ -8,10 +8,9 @@
  <link rel="stylesheet" href="styles.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
- <link rel="preload" as="image" href="images/net.webp" type="image/webp">
- <link rel="preload" as="image" href="images/rug.webp" type="image/webp">
+ <link rel="preload" as="image" href="images/sport2.webp" type="image/webp">
+ <link rel="preload" as="image" href="images/sportvp.webp" type="image/webp">
  <link rel="preload" as="image" href="images/sports court.webp" type="image/webp">
- <link rel="preload" as="image" href="images/schlcrkt.webp" type="image/webp">
  <link rel="preload" as="image" href="images/sport3.webp" type="image/webp">
 </head>
 
@@ -85,6 +84,12 @@
 
   <!-- HERO SECTION -->
   <section class="sp-hero">
+    <div class="sport-slideshow">
+    <img src="images/sport2.webp" class="active" alt="">
+    <img src="images/sportvp.webp" alt="">
+    <img src="images/sports court.webp" alt="">
+    <img src="images/sport3.webp" alt="">
+ </div>
      <div class="sp-hero-text">
        <h1>Sports at Voorpos Primary</h1>
        
@@ -712,6 +717,25 @@ flipInner.addEventListener("animationiteration", () => {
     index = (index + 1) % words.length;
     flipWord.textContent = words[index];
 });
+const sportImages = document.querySelectorAll(
+    ".sport-slideshow img"
+);
+
+let sportIndex = 0;
+
+setInterval(() => {
+
+    sportImages[sportIndex].classList.remove("active");
+
+    sportIndex++;
+
+    if (sportIndex >= sportImages.length) {
+        sportIndex = 0;
+    }
+
+    sportImages[sportIndex].classList.add("active");
+
+}, 5000);
 
 </script>
 <!-- ADMISSIONS INFO -->

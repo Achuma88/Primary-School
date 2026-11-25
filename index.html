@@ -95,6 +95,12 @@
  </div>
 
  <section class="hero">
+     <div class="index-slideshow">
+    <img src="images/voorie.webp" class="active" alt="">
+    <img src="images/voorie2.webp" alt="">
+    <img src="images/voorie3.webp" alt="">
+    <img src="images/topView.webp" alt="">
+ </div>
     <div class="hero-text">
         <h4>Inspiring Young Minds Every Day</h4>
 
@@ -915,6 +921,25 @@ flipInner.addEventListener("animationiteration", () => {
     index = (index + 1) % words.length;
     flipWord.textContent = words[index];
 });
+const indexImages = document.querySelectorAll(
+    ".index-slideshow img"
+);
+
+let indexIndex = 0;
+
+setInterval(() => {
+
+    indexImages[indexIndex].classList.remove("active");
+
+    indexIndex++;
+
+    if (indexIndex >= indexImages.length) {
+        indexIndex  = 0;
+    }
+
+    indexImages[indexIndex].classList.add("active");
+
+}, 5000);
 
 </script>
 <script type="module" src="script/flag.js"></script>
